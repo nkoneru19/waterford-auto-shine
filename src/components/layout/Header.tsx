@@ -1,0 +1,176 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { List, X } from "@phosphor-icons/react";
+import { AnimatePresence, motion } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
+
+const navLinks = [
+  { label: "Services", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "About", href: "#about" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Contact", href: "#contact" },
+];
+
+export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (href: string) => {
+    setMobileOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-all"
+      style={{
+        transitionDuration: "200ms",
+        transitionTimingFunction: "var(--ease-out-quart)",
+        backgroundColor: scrolled
+          ? "color-mix(in oklch, var(--color-surface) 80%, transparent)"
+          : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled
+          ? "1px solid var(--color-border)"
+          : "1px solid transparent",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="font-bold text-lg"
+            style={{
+              fontFamily: "var(--font-heading)",
+              color: "var(--color-accent)",
+            }}
+          >
+            {siteConfig.name}
+          </a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="font-medium text-sm transition-colors"
+                style={{
+                  color: "var(--color-text-secondary)",
+                  transitionDuration: "200ms",
+                  transitionTimingFunction: "var(--ease-out-quart)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--color-text-primary)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "var(--color-text-secondary)";
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-text-inverse)",
+                transitionDuration: "200ms",
+                transitionTimingFunction: "var(--ease-out-quart)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Get a Quote
+            </button>
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden flex items-center justify-center"
+            style={{
+              color: "var(--color-text-primary)",
+              width: "44px",
+              height: "44px",
+            }}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <List size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            className="md:hidden overflow-hidden"
+            style={{
+              backgroundColor: "var(--color-surface)",
+              borderBottom: "1px solid var(--color-border)",
+            }}
+          >
+            <nav className="px-4 py-4 flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="text-left text-base font-medium rounded-lg transition-colors"
+                  style={{
+                    color: "var(--color-text-primary)",
+                    transitionDuration: "200ms",
+                    transitionTimingFunction: "var(--ease-out-quart)",
+                    padding: "12px",
+                    minHeight: "44px",
+                  }}
+                >
+                  {link.label}
+                </button>
+              ))}
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="mt-2 text-sm font-semibold rounded-lg text-center"
+                style={{
+                  backgroundColor: "var(--color-accent)",
+                  color: "var(--color-text-inverse)",
+                  padding: "12px 20px",
+                  minHeight: "44px",
+                }}
+              >
+                Get a Quote
+              </button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
