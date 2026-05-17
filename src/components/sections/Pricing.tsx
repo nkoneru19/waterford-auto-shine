@@ -62,14 +62,14 @@ export default function Pricing() {
                     style={{
                       border: "1px solid var(--color-border)",
                       backgroundColor: "var(--color-surface)",
-                      boxShadow: "0 4px 16px oklch(0.1 0.02 30 / 0.04)",
+                      boxShadow: "0 4px 16px oklch(0.1 0.02 250 / 0.04)",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.6 0.2 30 / 0.08)";
-                      e.currentTarget.style.borderColor = "oklch(0.6 0.2 30 / 0.3)";
+                      e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.55 0.2 250 / 0.08)";
+                      e.currentTarget.style.borderColor = "oklch(0.55 0.2 250 / 0.3)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = "0 4px 16px oklch(0.1 0.02 30 / 0.04)";
+                      e.currentTarget.style.boxShadow = "0 4px 16px oklch(0.1 0.02 250 / 0.04)";
                       e.currentTarget.style.borderColor = "var(--color-border)";
                     }}
                   >
@@ -106,8 +106,8 @@ export default function Pricing() {
               className="flex flex-col py-10 px-8 md:px-10 h-full rounded-2xl transition-shadow duration-300"
               style={{
                 backgroundColor: "var(--color-surface-dark)",
-                border: "2px solid oklch(0.6 0.2 30 / 0.5)",
-                boxShadow: "0 24px 48px oklch(0.6 0.2 30 / 0.15)",
+                border: "2px solid oklch(0.55 0.2 250 / 0.4)",
+                boxShadow: "0 24px 48px oklch(0.55 0.2 250 / 0.2)",
               }}
             >
               <span
@@ -139,15 +139,15 @@ export default function Pricing() {
                 className="lab-bubbles mt-auto inline-block rounded-xl py-4 px-8 font-semibold text-center text-white transition-all duration-200"
                 style={{
                   backgroundColor: "var(--color-accent)",
-                  boxShadow: "0 8px 24px oklch(0.6 0.2 30 / 0.3)",
+                  boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 12px 32px oklch(0.6 0.2 30 / 0.4)";
+                  e.currentTarget.style.boxShadow = "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.6 0.2 30 / 0.3)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
                 }}
               >
                 Book Your Detail

@@ -25,5 +25,5 @@ export const siteConfig = {
     facebook:
       "https://www.facebook.com/p/Waterford-Auto-Shine-100069192687092/",
   },
-  accent: "oklch(0.6 0.2 30)",
+  accent: "oklch(0.55 0.2 250)",
 } as const;

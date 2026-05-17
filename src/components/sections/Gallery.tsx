@@ -44,7 +44,7 @@ export default function Gallery() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1.01)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 24px 48px oklch(0.6 0.2 30 / 0.15)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 24px 48px oklch(0.55 0.2 250 / 0.15)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1)";
@@ -68,7 +68,7 @@ export default function Gallery() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1.01)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 24px 48px oklch(0.6 0.2 30 / 0.15)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 24px 48px oklch(0.55 0.2 250 / 0.15)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1)";

@@ -21,58 +21,107 @@ const handWashItems = [
 
 export default function Comparison() {
   return (
-    <section id="comparison" className="py-16 sm:py-24 bg-[var(--color-surface-secondary)]">
+    <section
+      id="comparison"
+      className="py-16 sm:py-24"
+      style={{ backgroundColor: "var(--color-surface-secondary)" }}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section intro — left-aligned */}
+        {/* Section intro */}
         <AnimatedSection className="mb-12">
-          <p className="font-mono text-xs uppercase tracking-[0.15em] text-[var(--color-text-muted)] mb-3">
+          <p
+            className="font-mono text-xs uppercase tracking-[0.15em] mb-3"
+            style={{ color: "var(--color-text-muted)" }}
+          >
             The Difference
           </p>
-          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold text-[var(--color-text-primary)]">
-            Why Hand Wash Beats Automatic
+          <h2
+            className="font-[var(--font-heading)] font-bold"
+            style={{
+              fontSize: "clamp(1.75rem, 4vw, 3rem)",
+              color: "var(--color-text-primary)",
+            }}
+          >
+            Why Hand Wash Wins
           </h2>
         </AnimatedSection>
 
-        {/* Two-column layout */}
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-          {/* LEFT — Automatic (bad) */}
-          <AnimatedSection variant="slideFromLeft">
-            <h3 className="font-[var(--font-heading)] text-lg font-semibold mb-6 text-[var(--color-text-muted)]">
-              Automatic Car Wash
-            </h3>
-            <ul className="space-y-0">
-              {automaticItems.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 py-3 border-b border-[var(--color-text-muted)]/15"
-                >
-                  <span className="mt-0.5 shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-red-50 text-red-500">
-                    <X size={14} weight="bold" />
-                  </span>
-                  <span className="text-[var(--color-text-secondary)]">{item}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Two-column comparison */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Automatic (bad) — muted card */}
+          <AnimatedSection delay={0.05}>
+            <div
+              className="rounded-2xl p-7 sm:p-8 h-full"
+              style={{
+                backgroundColor: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
+              }}
+            >
+              <h3
+                className="font-[var(--font-heading)] text-lg font-semibold mb-6"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                Automatic Car Wash
+              </h3>
+              <ul className="space-y-4">
+                {automaticItems.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span
+                      className="mt-0.5 shrink-0 flex items-center justify-center w-5 h-5 rounded-full"
+                      style={{ backgroundColor: "oklch(0.95 0.02 15)" }}
+                    >
+                      <X size={12} weight="bold" style={{ color: "oklch(0.55 0.15 15)" }} />
+                    </span>
+                    <span
+                      className="text-sm leading-relaxed"
+                      style={{ color: "var(--color-text-secondary)" }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </AnimatedSection>
 
-          {/* RIGHT — Waterford (good) */}
-          <AnimatedSection variant="slideFromRight">
-            <h3 className="font-[var(--font-heading)] text-lg font-semibold mb-6 text-[var(--color-text-primary)]">
-              Waterford Auto Shine
-            </h3>
-            <ul className="space-y-0">
-              {handWashItems.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 py-3 border-b border-[var(--color-text-muted)]/15"
-                >
-                  <span className="mt-0.5 shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-[var(--color-accent-glow)] text-[var(--color-accent)]">
-                    <Check size={14} weight="bold" />
-                  </span>
-                  <span className="font-medium text-[var(--color-text-primary)]">{item}</span>
-                </li>
-              ))}
-            </ul>
+          {/* Waterford (good) — accent-tinted card */}
+          <AnimatedSection delay={0.12}>
+            <div
+              className="rounded-2xl p-7 sm:p-8 h-full"
+              style={{
+                backgroundColor: "var(--color-surface-dark)",
+                border: "1px solid oklch(0.55 0.2 250 / 0.15)",
+              }}
+            >
+              <h3
+                className="font-[var(--font-heading)] text-lg font-semibold mb-6"
+                style={{ color: "var(--color-text-inverse)" }}
+              >
+                Waterford Auto Shine
+              </h3>
+              <ul className="space-y-4">
+                {handWashItems.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span
+                      className="mt-0.5 shrink-0 flex items-center justify-center w-5 h-5 rounded-full"
+                      style={{ backgroundColor: "oklch(0.55 0.2 250 / 0.15)" }}
+                    >
+                      <Check
+                        size={12}
+                        weight="bold"
+                        style={{ color: "var(--color-accent-light)" }}
+                      />
+                    </span>
+                    <span
+                      className="text-sm leading-relaxed"
+                      style={{ color: "rgba(255,255,255,0.8)" }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </AnimatedSection>
         </div>
       </div>

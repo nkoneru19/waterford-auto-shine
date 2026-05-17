@@ -1,16 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { List, X } from "@phosphor-icons/react";
+import { List, X, Phone } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/siteConfig";
 
 const navLinks = [
   { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "About", href: "#about" },
+  { label: "Results", href: "#results" },
+  { label: "Process", href: "#process" },
   { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Header() {
@@ -67,7 +67,7 @@ export function Header() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -88,8 +88,27 @@ export function Header() {
                 {link.label}
               </button>
             ))}
+
+            <a
+              href={siteConfig.phoneHref}
+              className="hidden lg:flex items-center gap-2 text-sm font-semibold transition-colors"
+              style={{
+                color: "var(--color-text-primary)",
+                transitionDuration: "200ms",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--color-accent)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--color-text-primary)";
+              }}
+            >
+              <Phone size={16} weight="bold" />
+              {siteConfig.phone}
+            </a>
+
             <button
-              onClick={() => scrollTo("#contact")}
+              onClick={() => scrollTo("#hero-form")}
               className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform"
               style={{
                 backgroundColor: "var(--color-accent)",
@@ -156,7 +175,7 @@ export function Header() {
                 </button>
               ))}
               <button
-                onClick={() => scrollTo("#contact")}
+                onClick={() => scrollTo("#hero-form")}
                 className="mt-2 text-sm font-semibold rounded-lg text-center"
                 style={{
                   backgroundColor: "var(--color-accent)",

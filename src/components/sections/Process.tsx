@@ -29,7 +29,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-16 sm:py-24 bg-[var(--color-surface-secondary)]">
+    <section id="process" className="py-16 sm:py-24 bg-[var(--color-surface)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Intro — Left Aligned */}
         <AnimatedSection>

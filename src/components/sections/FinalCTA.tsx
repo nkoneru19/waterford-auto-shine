@@ -1,12 +1,13 @@
 "use client";
 
-import { Phone } from "@phosphor-icons/react";
+import { ArrowUp, Phone } from "@phosphor-icons/react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function FinalCTA() {
   return (
-    <section className="py-16 sm:py-24 aurora-glow grid-texture"
+    <section
+      className="py-16 sm:py-24 aurora-glow grid-texture"
       style={{ backgroundColor: "var(--color-surface-dark)" }}
     >
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,13 +22,14 @@ export default function FinalCTA() {
                 color: "var(--color-text-inverse)",
               }}
             >
-              Ready for That Showroom Shine?
+              Your Car Is Waiting.
             </h2>
             <p
               className="mt-5 max-w-xl text-lg"
-              style={{ lineHeight: "1.7", color: "var(--color-text-muted)" }}
+              style={{ lineHeight: "1.7", color: "rgba(255,255,255,0.6)" }}
             >
-              Book your detail today. Your car deserves the best.
+              Fill out the form above or give us a call. We&apos;ll have your
+              vehicle looking brand new.
             </p>
           </AnimatedSection>
 
@@ -39,15 +41,15 @@ export default function FinalCTA() {
                 className="lab-bubbles inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-200"
                 style={{
                   backgroundColor: "var(--color-accent)",
-                  boxShadow: "0 8px 24px oklch(0.6 0.2 30 / 0.3)",
+                  boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 12px 32px oklch(0.6 0.2 30 / 0.4)";
+                  e.currentTarget.style.boxShadow = "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.6 0.2 30 / 0.3)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
                 }}
               >
                 <Phone size={18} weight="bold" />
@@ -55,19 +57,20 @@ export default function FinalCTA() {
               </a>
 
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl px-8 py-4 font-semibold text-white transition-all duration-200"
+                href="#hero-form"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-200"
                 style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.05)";
-                  e.currentTarget.style.borderColor = "oklch(0.6 0.2 30 / 0.4)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.2 250 / 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent";
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
                 }}
               >
-                Get a Quote
+                <ArrowUp size={18} weight="bold" />
+                Back to Quote Form
               </a>
             </div>
           </AnimatedSection>

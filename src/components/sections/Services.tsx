@@ -23,6 +23,12 @@ const services = [
     price: "$80+",
   },
   {
+    title: "Express Wash",
+    description:
+      "Quick but thorough hand wash with vacuum service. Perfect for regular maintenance.",
+    price: "$45+",
+  },
+  {
     title: "Boat Detailing",
     description:
       "Full season boat detailing to restore your vessel's exterior and get it water-ready.",
@@ -34,51 +40,59 @@ const services = [
       "Complete RV wash and detail for recreational vehicles of all sizes.",
     price: "$250+",
   },
-  {
-    title: "Express Wash",
-    description:
-      "Quick but thorough hand wash with vacuum service. Perfect for regular maintenance.",
-    price: "$45+",
-  },
 ];
 
 export default function Services() {
   return (
     <section
       id="services"
-      className="py-16 sm:py-24 bg-[var(--color-surface-secondary)]"
+      className="py-16 sm:py-24"
+      style={{ backgroundColor: "var(--color-surface-secondary)" }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-14">
-          <p className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
+          <p
+            className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
             style={{ color: "var(--color-text-muted)" }}
           >
-            Services
+            Services &amp; Pricing
           </p>
           <h2
             className="font-[var(--font-heading)] font-bold"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)" }}
+            style={{
+              fontSize: "clamp(1.75rem, 4vw, 3rem)",
+              color: "var(--color-text-primary)",
+            }}
           >
-            What We Do
+            Transparent Pricing, No Surprises
           </h2>
+          <p
+            className="mt-3 text-base"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            Every price includes hand wash, premium products, and our full
+            attention. No upsells.
+          </p>
         </AnimatedSection>
 
-        {/* Asymmetric grid: featured card spans 2fr, stacked pair on right */}
+        {/* Top row: featured + 2 stacked */}
         <div className="grid grid-cols-1 md:grid-cols-[7fr_5fr] gap-5">
-          {/* Featured card — large */}
+          {/* Featured card */}
           <AnimatedSection delay={0}>
             <div
               className="group relative rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between transition-shadow duration-300"
               style={{
                 backgroundColor: "var(--color-surface-dark)",
                 border: "1px solid rgba(255,255,255,0.08)",
-                boxShadow: "0 20px 40px oklch(0.1 0.02 30 / 0.15)",
+                boxShadow: "0 20px 40px oklch(0.1 0.02 250 / 0.15)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 24px 48px oklch(0.6 0.2 30 / 0.12)";
+                e.currentTarget.style.boxShadow =
+                  "0 24px 48px oklch(0.55 0.2 250 / 0.12)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 20px 40px oklch(0.1 0.02 30 / 0.15)";
+                e.currentTarget.style.boxShadow =
+                  "0 20px 40px oklch(0.1 0.02 250 / 0.15)";
               }}
             >
               <div>
@@ -101,12 +115,27 @@ export default function Services() {
                   {services[0].description}
                 </p>
               </div>
-              <span
-                className="font-[var(--font-heading)] text-3xl font-bold mt-8 block"
-                style={{ color: "var(--color-accent-light)" }}
-              >
-                {services[0].price}
-              </span>
+              <div className="flex items-end justify-between mt-8">
+                <span
+                  className="font-[var(--font-heading)] text-3xl font-bold"
+                  style={{ color: "var(--color-accent-light)" }}
+                >
+                  {services[0].price}
+                </span>
+                <a
+                  href="#hero-form"
+                  className="text-sm font-semibold transition-colors"
+                  style={{ color: "rgba(255,255,255,0.6)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent-light)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+                  }}
+                >
+                  Get a Quote
+                </a>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -119,14 +148,17 @@ export default function Services() {
                   style={{
                     backgroundColor: "var(--color-surface)",
                     border: "1px solid var(--color-border)",
-                    boxShadow: "0 4px 16px oklch(0.1 0.02 30 / 0.04)",
+                    boxShadow: "0 4px 16px oklch(0.1 0.02 250 / 0.04)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.6 0.2 30 / 0.08)";
-                    e.currentTarget.style.borderColor = "oklch(0.6 0.2 30 / 0.3)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 24px oklch(0.55 0.2 250 / 0.08)";
+                    e.currentTarget.style.borderColor =
+                      "oklch(0.55 0.2 250 / 0.3)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = "0 4px 16px oklch(0.1 0.02 30 / 0.04)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 16px oklch(0.1 0.02 250 / 0.04)";
                     e.currentTarget.style.borderColor = "var(--color-border)";
                   }}
                 >
@@ -156,8 +188,8 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Bottom row — remaining services */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr] gap-5 mt-5">
+        {/* Bottom row — 2-col asymmetric instead of 3-col equal */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
           {services.slice(3).map((service, i) => (
             <AnimatedSection key={service.title} delay={(i + 3) * 0.08}>
               <div
@@ -165,14 +197,17 @@ export default function Services() {
                 style={{
                   backgroundColor: "var(--color-surface)",
                   border: "1px solid var(--color-border)",
-                  boxShadow: "0 4px 16px oklch(0.1 0.02 30 / 0.04)",
+                  boxShadow: "0 4px 16px oklch(0.1 0.02 250 / 0.04)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.6 0.2 30 / 0.08)";
-                  e.currentTarget.style.borderColor = "oklch(0.6 0.2 30 / 0.3)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 24px oklch(0.55 0.2 250 / 0.08)";
+                  e.currentTarget.style.borderColor =
+                    "oklch(0.55 0.2 250 / 0.3)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "0 4px 16px oklch(0.1 0.02 30 / 0.04)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 16px oklch(0.1 0.02 250 / 0.04)";
                   e.currentTarget.style.borderColor = "var(--color-border)";
                 }}
               >

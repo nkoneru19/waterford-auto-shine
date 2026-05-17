@@ -22,9 +22,9 @@ function FacebookIcon({ size = 20 }: { size?: number }) {
 const quickLinks = [
   { label: "Home", href: "#" },
   { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Results", href: "#results" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const services = [
