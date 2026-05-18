@@ -5,9 +5,9 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const faqs = [
   {
-    question: "How long does a full detail take?",
+    question: "How long does a detail take?",
     answer:
-      "A full detail typically takes 2-4 hours depending on the size and condition of your vehicle. We never rush — your car gets the time it deserves.",
+      "A detail typically takes 2-4 hours depending on the size and condition of your vehicle. We never rush — your car gets the time it deserves.",
   },
   {
     question: "Do you offer mobile detailing?",
@@ -15,19 +15,24 @@ const faqs = [
       "Currently, all services are performed at our shop at 3496 Pontiac Lake Rd. This allows us to use our full range of professional equipment for the best results.",
   },
   {
-    question: "What's included in the Express Wash?",
+    question: "What's the difference between Interior Detail and Complete Detail?",
     answer:
-      "Our Express Wash includes a thorough hand wash, wheel cleaning, tire dressing, window cleaning, and a full interior vacuum. It's the perfect quick refresh.",
+      "Our Interior Detail covers everything inside — vacuum, steam cleaning, carpet shampoo, leather conditioning, and more. The Complete Detail adds a full exterior package: hand wash, door jambs, rims and tires, and hand wax.",
   },
   {
-    question: "How often should I get my car detailed?",
+    question: "What types of vehicles do you detail?",
     answer:
-      "We recommend a full detail every 3-6 months, with express washes in between. Regular detailing protects your paint and maintains your vehicle's value.",
+      "We detail sedans, trucks, SUVs, and minivans. Pricing starts at $200 for interior and $325 for a complete detail, varying by vehicle size.",
+  },
+  {
+    question: "How often should I get my vehicle detailed?",
+    answer:
+      "We recommend a full detail every 3-6 months. Regular detailing protects your interior and exterior, and maintains your vehicle's value.",
   },
   {
     question: "Do I need an appointment?",
     answer:
-      "Appointments are recommended, especially during busy seasons. Call us at (248) 618-8999 or use the contact form below to schedule.",
+      "Appointments are recommended, especially during busy seasons. Call us at (248) 618-8999 or use the contact form to schedule.",
   },
 ];
 

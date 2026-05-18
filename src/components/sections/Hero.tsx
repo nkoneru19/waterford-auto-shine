@@ -159,10 +159,9 @@ export default function Hero() {
                 {...focusHandlers}
               >
                 <option value="">Select a service...</option>
-                <option value="Full Detail">Full Detail</option>
-                <option value="Interior Only">Interior Only</option>
-                <option value="Exterior Only">Exterior Only</option>
-                <option value="Other">Other / I need assistance</option>
+                <option value="Interior Detail">Interior Detail</option>
+                <option value="Complete Detail">Complete Detail (Interior + Exterior)</option>
+                <option value="Other">Other / Not sure</option>
               </select>
             </div>
 
