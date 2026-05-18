@@ -49,6 +49,7 @@ function Stars() {
 export default function GoogleReviews() {
   const isMobile = useIsMobile();
   const visibleReviews = isMobile ? reviews.slice(0, 4) : reviews;
+  const scrollDuration = isMobile ? "16s" : "22s";
 
   return (
     <section
@@ -95,34 +96,42 @@ export default function GoogleReviews() {
           }}
         />
 
-        <div className="flex gap-4 animate-scroll-left hover:[animation-play-state:paused]">
-          {[...visibleReviews, ...visibleReviews].map((review, i) => (
+        <div className="flex hover:[animation-play-state:paused] [&>*]:[animation-play-state:inherit]">
+          {[0, 1].map((copy) => (
             <div
-              key={i}
-              className="shrink-0 w-[300px] sm:w-[320px] rounded-xl p-5"
-              style={{
-                border: "1px solid var(--color-border)",
-                backgroundColor: "var(--color-surface)",
-              }}
+              key={copy}
+              className="flex shrink-0 gap-4 pr-4"
+              style={{ animation: `marquee-left ${scrollDuration} linear infinite` }}
             >
-              <div className="flex items-center justify-between mb-3">
-                <Stars />
-                <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
-                  {review.date}
-                </span>
-              </div>
-              <p
-                className="text-sm leading-relaxed mb-3"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <p
-                className="text-sm font-semibold"
-                style={{ color: "var(--color-text-primary)" }}
-              >
-                {review.author}
-              </p>
+              {visibleReviews.map((review, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-[300px] sm:w-[320px] rounded-xl p-5"
+                  style={{
+                    border: "1px solid var(--color-border)",
+                    backgroundColor: "var(--color-surface)",
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <Stars />
+                    <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                      {review.date}
+                    </span>
+                  </div>
+                  <p
+                    className="text-sm leading-relaxed mb-3"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+                  <p
+                    className="text-sm font-semibold"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    {review.author}
+                  </p>
+                </div>
+              ))}
             </div>
           ))}
         </div>

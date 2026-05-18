@@ -245,12 +245,6 @@ p, li, blockquote {
   color: var(--color-accent-dark);
 }
 
-/* ===== Mobile Carousel Speed ===== */
-@media (max-width: 640px) {
-  .animate-scroll-left {
-    animation-duration: 9s !important;
-  }
-}
 
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
