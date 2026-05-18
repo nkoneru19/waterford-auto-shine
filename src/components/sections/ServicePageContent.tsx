@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, ArrowRight } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 import { Footer } from "@/components/layout/Footer";
+import Map from "@/components/sections/Map";
 import type { ServiceData } from "@/lib/serviceData";
 
 const easeOutQuart = [0.25, 1, 0.5, 1] as const;
@@ -332,6 +333,7 @@ export default function ServicePageContent({
         </div>
       </section>
 
+      <Map />
       <Footer />
     </>
   );
