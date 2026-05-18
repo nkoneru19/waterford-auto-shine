@@ -4,7 +4,6 @@ const items = [
   "Hand Wash Only",
   "Locally Owned",
   "4.8 Star Rating",
-  "45+ Google Reviews",
   "Sedans, Trucks & SUVs",
   "From $45",
   "Satisfaction Guaranteed",
