@@ -5,7 +5,6 @@ const items = [
   "Locally Owned",
   "4.8 Star Rating",
   "Sedans, Trucks & SUVs",
-  "From $45",
   "Satisfaction Guaranteed",
   "10+ Years Experience",
 ];
