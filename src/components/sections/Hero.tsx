@@ -56,9 +56,11 @@ export default function Hero() {
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "var(--color-text-primary)" }}
           >
             Waterford&apos;s{" "}
-            <span style={{ color: "var(--color-accent)" }}>#1</span> Hand
-            <br />
-            Wash &amp; Detail Shop
+            <span style={{ color: "var(--color-accent)" }}>#1</span>
+            {/* Mobile: "Hand Wash &" on line 1, "Detail Shop" on line 2 */}
+            <span className="lg:hidden"> Hand Wash &amp;<br />Detail Shop</span>
+            {/* Desktop: original layout */}
+            <span className="hidden lg:inline"> Hand<br />Wash &amp; Detail Shop</span>
           </motion.h1>
 
           {/* Body */}
@@ -93,7 +95,7 @@ export default function Hero() {
         <motion.div
           {...fadeUp(0.15)}
           id="hero-form"
-          className="rounded-2xl p-6 sm:p-8"
+          className="hidden lg:block rounded-2xl p-6 sm:p-8"
           style={{
             border: "1px solid var(--color-border)",
             backgroundColor: "var(--color-surface)",
