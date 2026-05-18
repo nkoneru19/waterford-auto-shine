@@ -172,12 +172,65 @@ export default function Map() {
               title={`Map to ${siteConfig.name}`}
               src={`https://www.google.com/maps?q=${query}&output=embed`}
               width="100%"
-              height="420"
+              height="300"
               style={{ border: 0, display: "block" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+          </div>
+        </div>
+
+        {/* Service Area */}
+        <div className="mt-14 pt-10" style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}>
+          <h3
+            className="text-2xl font-bold mb-2"
+            style={{
+              fontFamily: "var(--font-heading)",
+              color: "var(--color-text-primary)",
+            }}
+          >
+            Service Area
+          </h3>
+          <p
+            className="mb-6"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            We proudly serve Waterford Township and all surrounding communities, including:
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "Waterford Township",
+              "Pontiac",
+              "Clarkston",
+              "White Lake",
+              "West Bloomfield",
+              "Bloomfield Hills",
+              "Auburn Hills",
+              "Lake Orion",
+              "Commerce Township",
+              "Sylvan Lake",
+              "Keego Harbor",
+              "Drayton Plains",
+              "Union Lake",
+              "Highland",
+              "Oxford",
+              "Rochester Hills",
+              "Troy",
+              "Farmington Hills",
+            ].map((city) => (
+              <span
+                key={city}
+                className="px-4 py-2 rounded-full text-sm font-medium"
+                style={{
+                  border: "1px solid rgba(0,0,0,0.12)",
+                  color: "var(--color-text-primary)",
+                  backgroundColor: "var(--color-surface-primary)",
+                }}
+              >
+                {city}
+              </span>
+            ))}
           </div>
         </div>
       </div>
