@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { variants, VIEWPORT_ONCE } from "@/lib/motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -16,6 +17,12 @@ export function AnimatedSection({
   variant = "fadeUp",
   delay = 0,
 }: AnimatedSectionProps) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}

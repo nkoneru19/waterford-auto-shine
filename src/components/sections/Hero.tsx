@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const easeOutQuart = [0.25, 1, 0.5, 1] as const;
 
-function fadeUp(delay: number) {
+function fadeUp(delay: number, mobile: boolean) {
+  if (mobile) return {};
   return {
     initial: { opacity: 0, y: 24 },
     animate: { opacity: 1, y: 0 },
@@ -33,6 +35,8 @@ function InputFocusHandlers() {
 
 export default function Hero() {
   const focusHandlers = InputFocusHandlers();
+  const isMobile = useIsMobile();
+  const Wrapper = isMobile ? "div" : motion.div;
 
   return (
     <section className="relative flex items-center bg-[var(--color-surface)] overflow-hidden pt-20 pb-8 md:pb-16">
@@ -41,7 +45,7 @@ export default function Hero() {
         <div>
           {/* Eyebrow */}
           <motion.p
-            {...fadeUp(0)}
+            {...fadeUp(0, isMobile)}
             className="font-mono text-xs uppercase tracking-[0.15em] mb-8"
             style={{ color: "var(--color-text-muted)" }}
           >
@@ -50,7 +54,7 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            {...fadeUp(0)}
+            {...fadeUp(0, isMobile)}
             className="font-[var(--font-heading)] font-bold tracking-tight leading-[1.05]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "var(--color-text-primary)" }}
           >
@@ -62,7 +66,7 @@ export default function Hero() {
 
           {/* Body */}
           <motion.p
-            {...fadeUp(0.1)}
+            {...fadeUp(0.1, isMobile)}
             className="mt-6 text-lg leading-relaxed max-w-[50ch]"
             style={{ color: "var(--color-text-secondary)" }}
           >
@@ -72,7 +76,7 @@ export default function Hero() {
 
           {/* Phone CTA — visible on mobile where form is below */}
           <motion.div
-            {...fadeUp(0.2)}
+            {...fadeUp(0.2, isMobile)}
             className="mt-8 lg:hidden flex flex-wrap items-center gap-5"
           >
             <a
@@ -96,8 +100,8 @@ export default function Hero() {
         </div>
 
         {/* Right — Quote Form */}
-        <motion.div
-          {...fadeUp(0.15)}
+        <Wrapper
+          {...fadeUp(0.15, isMobile)}
           id="hero-form"
           className="rounded-2xl p-6 sm:p-8"
           style={{
@@ -255,7 +259,7 @@ export default function Hero() {
               {siteConfig.phone}
             </a>
           </p>
-        </motion.div>
+        </Wrapper>
       </div>
     </section>
   );
