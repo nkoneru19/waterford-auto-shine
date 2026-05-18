@@ -41,12 +41,6 @@ export default function QuotePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div {...fadeUp(0)} className="mb-12 lg:mb-16">
-            <p
-              className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              Free Quote
-            </p>
             <h1
               className="font-[var(--font-heading)] font-bold tracking-tight"
               style={{
@@ -348,6 +342,19 @@ export default function QuotePage() {
             </motion.div>
           </div>
         </div>
+      </section>
+      {/* Google Map */}
+      <section className="w-full">
+        <iframe
+          title={`Map to ${siteConfig.name}`}
+          src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.address.full)}&output=embed`}
+          width="100%"
+          height="400"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </section>
       <Footer />
     </>
