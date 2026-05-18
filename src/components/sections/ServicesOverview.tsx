@@ -6,6 +6,7 @@ import { ArrowRight, Phone } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 import { services } from "@/lib/serviceData";
 import { Footer } from "@/components/layout/Footer";
+import Map from "@/components/sections/Map";
 
 const easeOutQuart = [0.25, 1, 0.5, 1] as const;
 
@@ -263,6 +264,7 @@ export default function ServicesOverview() {
         </div>
       </section>
 
+      <Map />
       <Footer />
     </>
   );
