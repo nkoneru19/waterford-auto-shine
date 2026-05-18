@@ -43,7 +43,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <motion.p
             {...fadeUp(0)}
-            className="font-mono text-xs uppercase tracking-[0.15em] mb-8"
+            className="hidden lg:block font-mono text-xs uppercase tracking-[0.15em] mb-8"
             style={{ color: "var(--color-text-muted)" }}
           >
             Professional Detailing &middot; Waterford Township, MI
@@ -86,13 +86,6 @@ export default function Hero() {
             >
               Receive a Free Quote
             </Link>
-            <a
-              href={siteConfig.phoneHref}
-              className="font-semibold transition-opacity hover:opacity-80"
-              style={{ color: "var(--color-accent)" }}
-            >
-              {siteConfig.phone}
-            </a>
           </motion.div>
         </div>
 
