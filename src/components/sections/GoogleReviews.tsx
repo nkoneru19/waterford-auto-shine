@@ -81,7 +81,7 @@ export default function GoogleReviews() {
           }}
         />
 
-        <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused]" style={{ animationDuration: "40s" }}>
+        <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused]" style={{ animationDuration: "50s" }}>
           {[0, 1].map((copy) =>
             reviews.map((review, i) => (
               <div

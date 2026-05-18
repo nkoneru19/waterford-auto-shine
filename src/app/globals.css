@@ -249,7 +249,7 @@ p, li, blockquote {
 /* ===== Mobile Carousel Speed ===== */
 @media (max-width: 640px) {
   .animate-marquee-left {
-    animation-duration: 25s !important;
+    animation-duration: 50s !important;
   }
 }
 
