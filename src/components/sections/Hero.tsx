@@ -76,7 +76,7 @@ export default function Hero() {
           {/* Phone CTA — visible on mobile where form is below */}
           <motion.div
             {...fadeUp(0.2)}
-            className="mt-8 lg:hidden flex flex-wrap items-center justify-center gap-5"
+            className="mt-12 lg:hidden flex flex-wrap items-center justify-center gap-5"
           >
             <Link
               href="/quote"
