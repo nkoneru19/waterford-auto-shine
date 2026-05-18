@@ -83,7 +83,7 @@ export default function Hero() {
                 boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.25)",
               }}
             >
-              Get a Free Quote
+              Receive a Free Quote
             </a>
             <a
               href={siteConfig.phoneHref}
