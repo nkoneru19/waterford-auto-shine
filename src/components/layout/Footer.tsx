@@ -160,7 +160,8 @@ export function Footer() {
                 </a>
               </p>
               <div>
-                <p>Mon&ndash;Sat: {siteConfig.hours.weekday}</p>
+                <p>Mon&ndash;Thu: {siteConfig.hours.weekday}</p>
+                <p>Fri&ndash;Sat: {siteConfig.hours.friday}</p>
                 <p>Sunday: {siteConfig.hours.sunday}</p>
               </div>
             </div>
