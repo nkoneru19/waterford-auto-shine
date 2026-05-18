@@ -245,27 +245,6 @@ p, li, blockquote {
   color: var(--color-accent-dark);
 }
 
-/* ===== Mobile Performance ===== */
-@media (max-width: 768px) {
-  /* Kill expensive aurora blur effects */
-  .aurora-glow::before,
-  .aurora-glow::after {
-    display: none !important;
-  }
-
-  /* Kill grid texture overlay */
-  .grid-texture::before {
-    display: none !important;
-  }
-
-  /* Reduce backdrop blur intensity */
-  header,
-  .safe-area-pb {
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-  }
-}
-
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
