@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, MapPin, Clock, NavigationArrow } from "@phosphor-icons/react";
+import { Phone, MapPin, Clock } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function Map() {
@@ -139,31 +139,6 @@ export default function Map() {
               </div>
             </div>
 
-            {/* Get Directions button */}
-            <a
-              href={siteConfig.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-all duration-200"
-              style={{
-                backgroundColor: "var(--color-accent)",
-                boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "translateY(-2px) scale(1.02)";
-                e.currentTarget.style.boxShadow =
-                  "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
-              }}
-            >
-              <NavigationArrow size={18} weight="bold" />
-              Get Directions
-            </a>
           </div>
 
           {/* Right — Embedded map */}
@@ -221,7 +196,7 @@ export default function Map() {
             ].map((city) => (
               <span
                 key={city}
-                className="px-4 py-2 rounded-full text-sm font-medium"
+                className="px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium"
                 style={{
                   border: "1px solid rgba(0,0,0,0.12)",
                   color: "var(--color-text-primary)",
