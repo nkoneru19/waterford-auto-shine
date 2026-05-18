@@ -1,7 +1,6 @@
 "use client";
 
 import { Star } from "@phosphor-icons/react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 const reviews = [
   {
@@ -29,11 +28,6 @@ const reviews = [
     text: "Brought my truck in absolutely covered in mud. They brought it back to life. Incredible work and fair prices.",
     date: "2 months ago",
   },
-  {
-    author: "Amanda W.",
-    text: "The interior detail on my Tahoe was perfect. Every crevice cleaned, leather conditioned, smells brand new. Highly recommend.",
-    date: "3 weeks ago",
-  },
 ];
 
 function Stars() {
@@ -47,19 +41,13 @@ function Stars() {
 }
 
 export default function GoogleReviews() {
-  const isMobile = useIsMobile();
-  const visibleReviews = isMobile ? reviews.slice(0, 4) : reviews;
-  const scrollDuration = isMobile ? "16s" : "22s";
-
   return (
     <section
       className="py-8 sm:py-12 overflow-hidden"
       style={{ backgroundColor: "var(--color-surface)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header row */}
         <div className="flex items-center gap-3 mb-5">
-          {/* Google "G" icon */}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -78,62 +66,53 @@ export default function GoogleReviews() {
         </div>
       </div>
 
-      {/* Continuous scrolling carousel */}
+      {/* Seamless infinite scroll — two copies side by side */}
       <div className="relative overflow-hidden">
-        {/* Fade edges */}
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 z-10"
           style={{
-            background:
-              "linear-gradient(to right, var(--color-surface), transparent)",
+            background: "linear-gradient(to right, var(--color-surface), transparent)",
           }}
         />
         <div
           className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 z-10"
           style={{
-            background:
-              "linear-gradient(to left, var(--color-surface), transparent)",
+            background: "linear-gradient(to left, var(--color-surface), transparent)",
           }}
         />
 
-        <div className="flex hover:[animation-play-state:paused] [&>*]:[animation-play-state:inherit]">
-          {[0, 1].map((copy) => (
-            <div
-              key={copy}
-              className="flex shrink-0 gap-4 pr-4"
-              style={{ animation: `marquee-left ${scrollDuration} linear infinite` }}
-            >
-              {visibleReviews.map((review, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 w-[300px] sm:w-[320px] rounded-xl p-5"
-                  style={{
-                    border: "1px solid var(--color-border)",
-                    backgroundColor: "var(--color-surface)",
-                  }}
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <Stars />
-                    <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
-                      {review.date}
-                    </span>
-                  </div>
-                  <p
-                    className="text-sm leading-relaxed mb-3"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    &ldquo;{review.text}&rdquo;
-                  </p>
-                  <p
-                    className="text-sm font-semibold"
-                    style={{ color: "var(--color-text-primary)" }}
-                  >
-                    {review.author}
-                  </p>
+        <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused]" style={{ animationDuration: "40s" }}>
+          {[0, 1].map((copy) =>
+            reviews.map((review, i) => (
+              <div
+                key={`${copy}-${i}`}
+                className="shrink-0 w-[300px] sm:w-[320px] rounded-xl p-5 mx-2"
+                style={{
+                  border: "1px solid var(--color-border)",
+                  backgroundColor: "var(--color-surface)",
+                }}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <Stars />
+                  <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                    {review.date}
+                  </span>
                 </div>
-              ))}
-            </div>
-          ))}
+                <p
+                  className="text-sm leading-relaxed mb-3"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <p
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  {review.author}
+                </p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </section>
