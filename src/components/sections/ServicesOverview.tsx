@@ -68,7 +68,7 @@ export default function ServicesOverview() {
               <motion.div key={service.slug} {...fadeUp(0.1 + i * 0.08)}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className={`block rounded-2xl p-8 md:p-10 h-full transition-all duration-300 ${
+                  className={`flex flex-col rounded-2xl p-8 md:p-10 h-full transition-all duration-300 ${
                     service.featured ? "" : "group"
                   }`}
                   style={
@@ -102,18 +102,17 @@ export default function ServicesOverview() {
                     }
                   }}
                 >
-                  {service.badge && (
-                    <span
-                      className="inline-block font-mono text-xs uppercase tracking-[0.15em] mb-4"
-                      style={{
-                        color: service.featured
-                          ? "var(--color-accent-light)"
-                          : "var(--color-accent)",
-                      }}
-                    >
-                      {service.badge}
-                    </span>
-                  )}
+                  <span
+                    className="inline-block font-mono text-xs uppercase tracking-[0.15em] mb-4"
+                    style={{
+                      color: service.featured
+                        ? "var(--color-accent-light)"
+                        : "var(--color-accent)",
+                      visibility: service.badge ? "visible" : "hidden",
+                    }}
+                  >
+                    {service.badge || "\u00A0"}
+                  </span>
 
                   <h2
                     className="font-[var(--font-heading)] text-2xl font-bold mb-2"
@@ -179,18 +178,11 @@ export default function ServicesOverview() {
 
                   <div
                     className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-sm transition-all duration-200"
-                    style={
-                      service.featured
-                        ? {
-                            backgroundColor: "var(--color-accent)",
-                            color: "#fff",
-                            boxShadow: "0 4px 16px oklch(0.55 0.2 250 / 0.3)",
-                          }
-                        : {
-                            border: "2px solid var(--color-accent)",
-                            color: "var(--color-accent)",
-                          }
-                    }
+                    style={{
+                      backgroundColor: "var(--color-accent)",
+                      color: "#fff",
+                      boxShadow: "0 4px 16px oklch(0.55 0.2 250 / 0.3)",
+                    }}
                   >
                     View Details
                     <ArrowRight size={16} weight="bold" />
