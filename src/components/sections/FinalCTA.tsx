@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowUp, Phone } from "@phosphor-icons/react";
+import Link from "next/link";
+import { PaperPlaneTilt, Phone } from "@phosphor-icons/react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -28,7 +29,7 @@ export default function FinalCTA() {
               className="mt-5 max-w-xl text-lg"
               style={{ lineHeight: "1.7", color: "rgba(255,255,255,0.6)" }}
             >
-              Fill out the form above or give us a call. We&apos;ll have your
+              Get a free quote or give us a call. We&apos;ll have your
               vehicle looking brand new.
             </p>
           </AnimatedSection>
@@ -56,8 +57,8 @@ export default function FinalCTA() {
                 Call {siteConfig.phone}
               </a>
 
-              <a
-                href="#hero-form"
+              <Link
+                href="/quote"
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-200"
                 style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 onMouseEnter={(e) => {
@@ -69,9 +70,9 @@ export default function FinalCTA() {
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
                 }}
               >
-                <ArrowUp size={18} weight="bold" />
-                Back to Quote Form
-              </a>
+                <PaperPlaneTilt size={18} weight="bold" />
+                Get a Free Quote
+              </Link>
             </div>
           </AnimatedSection>
         </div>

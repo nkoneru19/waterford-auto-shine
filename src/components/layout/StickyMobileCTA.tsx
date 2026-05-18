@@ -1,16 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { Phone, MapPin, ChatCircle } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 
 export function StickyMobileCTA() {
-  const scrollToContact = () => {
-    const el = document.querySelector("#contact");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div
       className="fixed bottom-0 left-0 right-0 z-40 md:hidden safe-area-pb"
@@ -43,8 +37,8 @@ export function StickyMobileCTA() {
         </a>
 
         {/* Get Quote */}
-        <button
-          onClick={scrollToContact}
+        <Link
+          href="/quote"
           className="flex flex-col items-center justify-center gap-1"
           style={{
             backgroundColor: "var(--color-accent)",
@@ -54,7 +48,7 @@ export function StickyMobileCTA() {
         >
           <ChatCircle size={18} weight="bold" />
           <span className="text-xs font-semibold">Get Quote</span>
-        </button>
+        </Link>
 
         {/* Directions */}
         <a

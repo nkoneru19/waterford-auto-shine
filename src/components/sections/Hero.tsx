@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -75,8 +76,8 @@ export default function Hero() {
             {...fadeUp(0.2)}
             className="mt-8 lg:hidden flex flex-wrap items-center gap-5"
           >
-            <a
-              href="#hero-form"
+            <Link
+              href="/quote"
               className="lab-bubbles inline-block rounded-xl py-4 px-8 font-semibold text-white transition-all duration-200"
               style={{
                 backgroundColor: "var(--color-accent)",
@@ -84,7 +85,7 @@ export default function Hero() {
               }}
             >
               Receive a Free Quote
-            </a>
+            </Link>
             <a
               href={siteConfig.phoneHref}
               className="font-semibold transition-opacity hover:opacity-80"

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { List, X, Phone } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/siteConfig";
@@ -16,6 +18,8 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -26,6 +30,10 @@ export function Header() {
 
   const scrollTo = (href: string) => {
     setMobileOpen(false);
+    if (!isHome) {
+      window.location.href = "/" + href;
+      return;
+    }
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -51,12 +59,8 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          <Link
+            href="/"
             className="font-bold text-lg"
             style={{
               fontFamily: "var(--font-heading)",
@@ -64,7 +68,7 @@ export function Header() {
             }}
           >
             {siteConfig.name}
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -107,8 +111,8 @@ export function Header() {
               {siteConfig.phone}
             </a>
 
-            <button
-              onClick={() => scrollTo("#hero-form")}
+            <Link
+              href="/quote"
               className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform"
               style={{
                 backgroundColor: "var(--color-accent)",
@@ -124,7 +128,7 @@ export function Header() {
               }}
             >
               Receive a Free Quote
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Hamburger */}
@@ -174,9 +178,10 @@ export function Header() {
                   {link.label}
                 </button>
               ))}
-              <button
-                onClick={() => scrollTo("#hero-form")}
-                className="mt-2 text-sm font-semibold rounded-lg text-center"
+              <Link
+                href="/quote"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 text-sm font-semibold rounded-lg text-center block"
                 style={{
                   backgroundColor: "var(--color-accent)",
                   color: "var(--color-text-inverse)",
@@ -185,7 +190,7 @@ export function Header() {
                 }}
               >
                 Receive a Free Quote
-              </button>
+              </Link>
             </nav>
           </motion.div>
         )}

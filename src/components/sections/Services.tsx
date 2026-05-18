@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const interiorItems = [
@@ -42,8 +43,8 @@ const completePricing = [
 function QuoteButton({ variant = "light" }: { variant?: "light" | "dark" }) {
   if (variant === "dark") {
     return (
-      <a
-        href="#hero-form"
+      <Link
+        href="/quote"
         className="lab-bubbles mt-8 inline-block w-full rounded-xl py-4 px-8 font-semibold text-center text-white transition-all duration-200"
         style={{
           backgroundColor: "var(--color-accent)",
@@ -61,13 +62,13 @@ function QuoteButton({ variant = "light" }: { variant?: "light" | "dark" }) {
         }}
       >
         Get My Quote Today
-      </a>
+      </Link>
     );
   }
 
   return (
-    <a
-      href="#hero-form"
+    <Link
+      href="/quote"
       className="mt-8 inline-block w-full rounded-xl py-4 px-8 font-semibold text-center transition-all duration-200"
       style={{
         color: "var(--color-accent)",
@@ -85,7 +86,7 @@ function QuoteButton({ variant = "light" }: { variant?: "light" | "dark" }) {
       }}
     >
       Get My Quote Today
-    </a>
+    </Link>
   );
 }
 

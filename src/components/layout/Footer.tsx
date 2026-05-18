@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 
 function FacebookIcon({ size = 20 }: { size?: number }) {
@@ -20,11 +21,11 @@ function FacebookIcon({ size = 20 }: { size?: number }) {
 }
 
 const quickLinks = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Results", href: "#results" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "Get a Quote", href: "/quote" },
+  { label: "Services", href: "/#services" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const services = [
@@ -92,7 +93,7 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm transition-colors"
                     style={{
@@ -104,7 +105,7 @@ export function Footer() {
                     onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
