@@ -10,7 +10,7 @@ export default function Map() {
     <section
       id="map"
       className="w-full"
-      style={{ backgroundColor: "var(--color-surface-dark)" }}
+      style={{ backgroundColor: "var(--color-surface-secondary)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         {/* Section label + heading */}
@@ -24,7 +24,7 @@ export default function Map() {
           className="text-3xl sm:text-4xl font-bold mb-10"
           style={{
             fontFamily: "var(--font-heading)",
-            color: "var(--color-text-inverse)",
+            color: "var(--color-text-primary)",
           }}
         >
           Our Location
@@ -37,7 +37,7 @@ export default function Map() {
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+                style={{ backgroundColor: "rgba(0,0,0,0.05)" }}
               >
                 <MapPin
                   size={20}
@@ -48,11 +48,11 @@ export default function Map() {
               <div>
                 <p
                   className="font-semibold text-lg"
-                  style={{ color: "var(--color-text-inverse)" }}
+                  style={{ color: "var(--color-text-primary)" }}
                 >
                   {siteConfig.address.street}
                 </p>
-                <p style={{ color: "var(--color-text-muted)" }}>
+                <p style={{ color: "var(--color-text-secondary)" }}>
                   {siteConfig.address.city}, {siteConfig.address.state}{" "}
                   {siteConfig.address.zip}
                 </p>
@@ -63,7 +63,7 @@ export default function Map() {
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+                style={{ backgroundColor: "rgba(0,0,0,0.05)" }}
               >
                 <Phone
                   size={20}
@@ -77,7 +77,7 @@ export default function Map() {
                   className="font-semibold text-lg transition-colors duration-200"
                   style={{ color: "var(--color-accent)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-text-inverse)";
+                    e.currentTarget.style.color = "var(--color-text-primary)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = "var(--color-accent)";
@@ -87,7 +87,7 @@ export default function Map() {
                 </a>
                 <p
                   className="text-sm"
-                  style={{ color: "var(--color-text-muted)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   Tap to call
                 </p>
@@ -98,7 +98,7 @@ export default function Map() {
             <div className="flex items-start gap-4">
               <div
                 className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+                style={{ backgroundColor: "rgba(0,0,0,0.05)" }}
               >
                 <Clock
                   size={20}
@@ -109,29 +109,29 @@ export default function Map() {
               <div className="space-y-1">
                 <p
                   className="font-semibold text-lg mb-2"
-                  style={{ color: "var(--color-text-inverse)" }}
+                  style={{ color: "var(--color-text-primary)" }}
                 >
                   Hours
                 </p>
                 <div
                   className="space-y-1 text-sm"
-                  style={{ color: "var(--color-text-muted)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   <div className="flex justify-between gap-8">
                     <span>Monday &ndash; Thursday</span>
-                    <span style={{ color: "var(--color-text-inverse)" }}>
+                    <span style={{ color: "var(--color-text-primary)" }}>
                       {siteConfig.hours.weekday}
                     </span>
                   </div>
                   <div className="flex justify-between gap-8">
                     <span>Friday &ndash; Saturday</span>
-                    <span style={{ color: "var(--color-text-inverse)" }}>
+                    <span style={{ color: "var(--color-text-primary)" }}>
                       {siteConfig.hours.friday}
                     </span>
                   </div>
                   <div className="flex justify-between gap-8">
                     <span>Sunday</span>
-                    <span style={{ color: "var(--color-text-inverse)" }}>
+                    <span style={{ color: "var(--color-text-primary)" }}>
                       {siteConfig.hours.sunday}
                     </span>
                   </div>
@@ -167,7 +167,7 @@ export default function Map() {
           </div>
 
           {/* Right — Embedded map */}
-          <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+          <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,0,0,0.1)" }}>
             <iframe
               title={`Map to ${siteConfig.name}`}
               src={`https://www.google.com/maps?q=${query}&output=embed`}
