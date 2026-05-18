@@ -36,7 +36,7 @@ export default function Hero() {
   const focusHandlers = InputFocusHandlers();
 
   return (
-    <section className="relative flex items-center bg-[var(--color-surface)] overflow-hidden pt-20 pb-8 md:pb-16">
+    <section className="relative flex items-center bg-[var(--color-surface)] overflow-hidden pt-28 md:pt-20 pb-8 md:pb-16">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-center">
         {/* Left — Text content */}
         <div>
@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             {...fadeUp(0)}
-            className="font-[var(--font-heading)] font-bold tracking-tight leading-[1.05]"
+            className="font-[var(--font-heading)] font-bold tracking-tight leading-[1.05] text-center lg:text-left"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "var(--color-text-primary)" }}
           >
             Waterford&apos;s{" "}
@@ -66,7 +66,7 @@ export default function Hero() {
           {/* Body */}
           <motion.p
             {...fadeUp(0.1)}
-            className="mt-6 text-lg leading-relaxed max-w-[50ch]"
+            className="mt-6 text-lg leading-relaxed max-w-[50ch] text-center lg:text-left mx-auto lg:mx-0"
             style={{ color: "var(--color-text-secondary)" }}
           >
             Professional hand wash and detailing with premium products and a
