@@ -73,7 +73,7 @@
 
   @keyframes marquee-left {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-50%); }
   }
 
   @keyframes scroll-left {
@@ -249,7 +249,7 @@ p, li, blockquote {
 /* ===== Mobile Carousel Speed ===== */
 @media (max-width: 640px) {
   .animate-marquee-left {
-    animation-duration: 50s !important;
+    animation-duration: 60s !important;
   }
 }
 
