@@ -117,12 +117,29 @@ export default function Testimonials() {
           </div>
         </AnimatedSection>
 
-        {/* Supporting testimonials grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {supporting.map((t, i) => (
-            <AnimatedSection key={i} delay={0.2 + i * 0.05}>
+        {/* Continuous scrolling carousel */}
+        <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+          {/* Fade edges */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 z-10"
+            style={{
+              background:
+                "linear-gradient(to right, var(--color-surface-dark), transparent)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 z-10"
+            style={{
+              background:
+                "linear-gradient(to left, var(--color-surface-dark), transparent)",
+            }}
+          />
+
+          <div className="flex gap-5 animate-scroll-left hover:[animation-play-state:paused]">
+            {[...supporting, ...supporting].map((t, i) => (
               <div
-                className="rounded-2xl p-8 h-full"
+                key={i}
+                className="shrink-0 w-[340px] sm:w-[380px] rounded-2xl p-8"
                 style={{
                   backgroundColor: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
@@ -139,8 +156,8 @@ export default function Testimonials() {
                   &mdash; {t.author}
                 </p>
               </div>
-            </AnimatedSection>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
