@@ -57,14 +57,28 @@ export default function ServicePageContent({
             >
               {service.description}
             </p>
-            {service.startingPrice && (
-              <p
-                className="mt-6 font-[var(--font-heading)] text-3xl font-bold"
-                style={{ color: "var(--color-accent-light)" }}
-              >
-                Starting at {service.startingPrice}
-              </p>
-            )}
+            <Link
+              href="/quote"
+              className="lab-bubbles mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-200"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform =
+                  "translateY(-2px) scale(1.02)";
+                e.currentTarget.style.boxShadow =
+                  "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform =
+                  "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
+              }}
+            >
+              Get a Free Quote
+            </Link>
           </motion.div>
         </div>
       </section>
