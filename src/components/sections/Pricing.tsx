@@ -17,7 +17,7 @@ const tiers = [
   },
   {
     name: "Interior Detail",
-    price: "$200 – $275+",
+    price: "$200 – $275",
     description:
       "Vacuum, steam clean, carpet shampoo, leather conditioning, headliner, windows",
     popular: false,
