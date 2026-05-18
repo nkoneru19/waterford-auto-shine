@@ -152,7 +152,7 @@ export default function ServicesOverview() {
 
                   <ul className="space-y-2 mb-8">
                     {(service.extras
-                      ? [...service.items.slice(0, 3), ...service.extras.items.slice(0, 2)]
+                      ? service.extras.items
                       : service.items
                     ).map((item) => (
                       <li
@@ -175,27 +175,22 @@ export default function ServicesOverview() {
                         {item}
                       </li>
                     ))}
-                    {(service.items.length + (service.extras?.items.length ?? 0)) > 5 && (
-                      <li
-                        className="text-sm font-medium"
-                        style={{
-                          color: service.featured
-                            ? "var(--color-accent-light)"
-                            : "var(--color-accent)",
-                        }}
-                      >
-                        + more included
-                      </li>
-                    )}
                   </ul>
 
                   <div
-                    className="mt-auto flex items-center gap-2 font-semibold text-sm"
-                    style={{
-                      color: service.featured
-                        ? "var(--color-accent-light)"
-                        : "var(--color-accent)",
-                    }}
+                    className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-sm transition-all duration-200"
+                    style={
+                      service.featured
+                        ? {
+                            backgroundColor: "var(--color-accent)",
+                            color: "#fff",
+                            boxShadow: "0 4px 16px oklch(0.55 0.2 250 / 0.3)",
+                          }
+                        : {
+                            border: "2px solid var(--color-accent)",
+                            color: "var(--color-accent)",
+                          }
+                    }
                   >
                     View Details
                     <ArrowRight size={16} weight="bold" />
