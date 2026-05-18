@@ -43,7 +43,7 @@ function Stars() {
 export default function GoogleReviews() {
   return (
     <section
-      className="py-8 sm:py-12 overflow-hidden"
+      className="pt-10 pb-8 sm:py-12 overflow-hidden"
       style={{ backgroundColor: "var(--color-surface)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -36,7 +36,7 @@ export default function Hero() {
   const focusHandlers = InputFocusHandlers();
 
   return (
-    <section className="relative flex items-center bg-[var(--color-surface)] overflow-hidden pt-28 md:pt-20 pb-8 md:pb-16">
+    <section className="relative flex items-center bg-[var(--color-surface)] overflow-hidden pt-28 md:pt-20 pb-10 md:pb-16">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-center">
         {/* Left — Text content */}
         <div>
@@ -76,7 +76,7 @@ export default function Hero() {
           {/* Phone CTA — visible on mobile where form is below */}
           <motion.div
             {...fadeUp(0.2)}
-            className="mt-12 lg:hidden flex flex-wrap items-center justify-center gap-5"
+            className="mt-14 mb-4 lg:hidden flex flex-wrap items-center justify-center gap-5"
           >
             <Link
               href="/quote"
