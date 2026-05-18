@@ -168,7 +168,7 @@ export default function Services() {
               </ul>
 
               <div className="mt-auto">
-                <QuoteButton variant="light" />
+                <QuoteButton variant="dark" />
               </div>
             </div>
           </AnimatedSection>
@@ -255,7 +255,7 @@ export default function Services() {
                 ))}
               </div>
 
-              <QuoteButton variant="light" />
+              <QuoteButton variant="dark" />
             </div>
           </AnimatedSection>
 
@@ -294,55 +294,18 @@ export default function Services() {
                 From $325
               </p>
 
-              {/* Interior items */}
               <p
-                className="font-mono text-xs uppercase tracking-[0.15em] mb-2"
-                style={{ color: "rgba(255,255,255,0.4)" }}
+                className="flex items-center gap-2 text-sm mb-5"
+                style={{ color: "rgba(255,255,255,0.7)" }}
               >
-                Interior
+                <span
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{
+                    backgroundColor: "var(--color-accent-light)",
+                  }}
+                />
+                Everything in Interior and Exterior
               </p>
-              <ul className="space-y-2 mb-5">
-                {interiorItems.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
-                  >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{
-                        backgroundColor: "var(--color-accent-light)",
-                      }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Exterior items */}
-              <p
-                className="font-mono text-xs uppercase tracking-[0.15em] mb-2"
-                style={{ color: "rgba(255,255,255,0.4)" }}
-              >
-                Exterior
-              </p>
-              <ul className="space-y-2 mb-5">
-                {exteriorItems.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
-                  >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{
-                        backgroundColor: "var(--color-accent-light)",
-                      }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
 
               {/* Additional services */}
               <p
