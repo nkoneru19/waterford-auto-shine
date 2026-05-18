@@ -2,6 +2,7 @@
 
 import { Star } from "@phosphor-icons/react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = {
   quote:
@@ -78,6 +79,9 @@ function Stars({ size = 20 }: { size?: number }) {
 }
 
 export default function Testimonials() {
+  const isMobile = useIsMobile();
+  const visibleReviews = isMobile ? supporting.slice(0, 5) : supporting;
+
   return (
     <section
       id="reviews"
@@ -136,7 +140,7 @@ export default function Testimonials() {
           />
 
           <div className="flex gap-5 animate-scroll-left hover:[animation-play-state:paused]">
-            {[...supporting, ...supporting].map((t, i) => (
+            {[...visibleReviews, ...visibleReviews].map((t, i) => (
               <div
                 key={i}
                 className="shrink-0 w-[340px] sm:w-[380px] rounded-2xl p-8"

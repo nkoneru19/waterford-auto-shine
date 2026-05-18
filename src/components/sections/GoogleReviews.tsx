@@ -1,6 +1,7 @@
 "use client";
 
 import { Star } from "@phosphor-icons/react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const reviews = [
   {
@@ -46,6 +47,9 @@ function Stars() {
 }
 
 export default function GoogleReviews() {
+  const isMobile = useIsMobile();
+  const visibleReviews = isMobile ? reviews.slice(0, 4) : reviews;
+
   return (
     <section
       className="py-8 sm:py-12 overflow-hidden"
@@ -92,7 +96,7 @@ export default function GoogleReviews() {
         />
 
         <div className="flex gap-4 animate-scroll-left hover:[animation-play-state:paused]">
-          {[...reviews, ...reviews].map((review, i) => (
+          {[...visibleReviews, ...visibleReviews].map((review, i) => (
             <div
               key={i}
               className="shrink-0 w-[300px] sm:w-[320px] rounded-xl p-5"
