@@ -20,11 +20,6 @@ const faqs = [
       "Our Express Wash includes a thorough hand wash, wheel cleaning, tire dressing, window cleaning, and a full interior vacuum. It's the perfect quick refresh.",
   },
   {
-    question: "Do you detail boats and RVs?",
-    answer:
-      "Yes! We offer full detailing services for boats and RVs of all sizes. Boat detailing is available all season long.",
-  },
-  {
     question: "How often should I get my car detailed?",
     answer:
       "We recommend a full detail every 3-6 months, with express washes in between. Regular detailing protects your paint and maintains your vehicle's value.",

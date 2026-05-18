@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Car, Jeep, Boat, Van, Buildings, Wrench } from "@phosphor-icons/react";
+import { Car, Jeep, Buildings, Wrench } from "@phosphor-icons/react";
 
 const audiences = [
   {
@@ -21,18 +21,6 @@ const audiences = [
     title: "SUVs & Trucks",
     description:
       "Bigger vehicles need more attention. We handle full-size trucks and lifted SUVs.",
-  },
-  {
-    icon: Boat,
-    title: "Boat Owners",
-    description:
-      "Hull cleaning, interior detailing, and gel coat restoration to keep you lake-ready.",
-  },
-  {
-    icon: Van,
-    title: "RV & Campers",
-    description:
-      "Full exterior wash and interior deep clean for your home on wheels.",
   },
   {
     icon: Buildings,
@@ -66,7 +54,7 @@ export default function WhoWeServe() {
             className="mt-4 text-lg"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            Cars, boats, RVs — if it moves, we make it shine.
+            Cars, trucks, SUVs — if it has wheels, we make it shine.
           </p>
         </AnimatedSection>
 

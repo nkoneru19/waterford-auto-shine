@@ -21,7 +21,7 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   title: "Waterford Auto Shine | Premium Auto Detailing in Waterford, MI",
   description:
-    "Professional hand wash and auto detailing services in Waterford Township, MI. Premium care for cars, SUVs, trucks, boats, and RVs. Book your free quote today.",
+    "Professional hand wash and auto detailing services in Waterford Township, MI. Premium care for cars, trucks, and SUVs. Book your free quote today.",
 };
 
 export default function RootLayout({

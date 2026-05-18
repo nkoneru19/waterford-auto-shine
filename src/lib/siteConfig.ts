@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Waterford Auto Shine",
   tagline: "Premium Auto Detailing",
   description:
-    "Professional hand wash and detailing services in Waterford Township, MI. Cars, SUVs, boats, and RVs.",
+    "Professional hand wash and detailing services in Waterford Township, MI. Cars, trucks, and SUVs.",
   phone: "(248) 618-8999",
   phoneHref: "tel:+12486188999",
   address: {
