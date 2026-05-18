@@ -351,8 +351,8 @@ export default function Services() {
 
               {/* Additional services */}
               <p
-                className="font-mono text-xs uppercase tracking-[0.15em] mb-2"
-                style={{ color: "rgba(255,255,255,0.4)" }}
+                className="font-mono text-sm font-bold uppercase tracking-[0.2em] mb-2"
+                style={{ color: "var(--color-accent)" }}
               >
                 Plus
               </p>

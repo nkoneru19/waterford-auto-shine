@@ -119,8 +119,8 @@ export default function ServicePageContent({
               {service.extras && (
                 <div className="mt-8">
                   <p
-                    className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
-                    style={{ color: "var(--color-text-muted)" }}
+                    className="font-mono text-sm font-bold uppercase tracking-[0.2em] mb-4"
+                    style={{ color: "var(--color-accent)" }}
                   >
                     {service.extras.label}
                   </p>
