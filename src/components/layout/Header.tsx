@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/siteConfig";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/services" },
   { label: "Results", href: "#results" },
   { label: "Process", href: "#process" },
   { label: "Reviews", href: "#reviews" },
@@ -28,8 +28,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (href: string) => {
+  const handleNav = (href: string) => {
     setMobileOpen(false);
+    if (!href.startsWith("#")) {
+      window.location.href = href;
+      return;
+    }
     if (!isHome) {
       window.location.href = "/" + href;
       return;
@@ -75,7 +79,7 @@ export function Header() {
             {navLinks.map((link) => (
               <button
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNav(link.href)}
                 className="font-medium text-sm transition-colors"
                 style={{
                   color: "var(--color-text-secondary)",
@@ -165,7 +169,7 @@ export function Header() {
               {navLinks.map((link) => (
                 <button
                   key={link.href}
-                  onClick={() => scrollTo(link.href)}
+                  onClick={() => handleNav(link.href)}
                   className="text-left text-base font-medium rounded-lg transition-colors"
                   style={{
                     color: "var(--color-text-primary)",
