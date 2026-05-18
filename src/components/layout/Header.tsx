@@ -50,12 +50,12 @@ export function Header() {
       style={{
         transitionDuration: "200ms",
         transitionTimingFunction: "var(--ease-out-quart)",
-        backgroundColor: scrolled
+        backgroundColor: scrolled || !isHome
           ? "color-mix(in oklch, var(--color-surface) 80%, transparent)"
           : "transparent",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-        borderBottom: scrolled
+        backdropFilter: scrolled || !isHome ? "blur(16px)" : "none",
+        WebkitBackdropFilter: scrolled || !isHome ? "blur(16px)" : "none",
+        borderBottom: scrolled || !isHome
           ? "1px solid var(--color-border)"
           : "1px solid transparent",
       }}

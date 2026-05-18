@@ -41,7 +41,7 @@ export default function ServicesOverview() {
                 color: "var(--color-text-inverse)",
               }}
             >
-              Professional Auto Detailing
+              Professional Interior &amp; Exterior Detailing
               <br />
               in Waterford Township
             </h1>
