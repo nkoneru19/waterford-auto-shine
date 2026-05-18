@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { List, X, Phone } from "@phosphor-icons/react";
+import { List, X, Phone, CaretDown } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -18,6 +18,7 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -166,22 +167,81 @@ export function Header() {
             }}
           >
             <nav className="px-4 py-4 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNav(link.href)}
-                  className="text-left text-base font-medium rounded-lg transition-colors"
-                  style={{
-                    color: "var(--color-text-primary)",
-                    transitionDuration: "200ms",
-                    transitionTimingFunction: "var(--ease-out-quart)",
-                    padding: "12px",
-                    minHeight: "44px",
-                  }}
-                >
-                  {link.label}
-                </button>
-              ))}
+              {navLinks.map((link) =>
+                link.label === "Services" ? (
+                  <div key={link.href}>
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className="w-full flex items-center justify-between text-left text-base font-medium rounded-lg transition-colors"
+                      style={{
+                        color: "var(--color-text-primary)",
+                        transitionDuration: "200ms",
+                        transitionTimingFunction: "var(--ease-out-quart)",
+                        padding: "12px",
+                        minHeight: "44px",
+                      }}
+                    >
+                      {link.label}
+                      <CaretDown
+                        size={18}
+                        weight="bold"
+                        style={{
+                          transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          transition: "transform 200ms ease",
+                        }}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.15, ease: [0.25, 1, 0.5, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="flex flex-col gap-1 pl-4">
+                            {[
+                              { label: "Interior Detail", href: "/services/interior-detailing" },
+                              { label: "Exterior Detail", href: "/services/exterior-detailing" },
+                              { label: "Complete Detail", href: "/services/full-detailing" },
+                            ].map((sub) => (
+                              <button
+                                key={sub.href}
+                                onClick={() => handleNav(sub.href)}
+                                className="text-left text-sm font-medium rounded-lg transition-colors"
+                                style={{
+                                  color: "var(--color-text-secondary)",
+                                  transitionDuration: "200ms",
+                                  padding: "10px 12px",
+                                  minHeight: "40px",
+                                }}
+                              >
+                                {sub.label}
+                              </button>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNav(link.href)}
+                    className="text-left text-base font-medium rounded-lg transition-colors"
+                    style={{
+                      color: "var(--color-text-primary)",
+                      transitionDuration: "200ms",
+                      transitionTimingFunction: "var(--ease-out-quart)",
+                      padding: "12px",
+                      minHeight: "44px",
+                    }}
+                  >
+                    {link.label}
+                  </button>
+                )
+              )}
               <Link
                 href="/quote"
                 onClick={() => setMobileOpen(false)}
