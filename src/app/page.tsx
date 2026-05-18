@@ -8,6 +8,7 @@ import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Map from "@/components/sections/Map";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <FinalCTA />
+      <Map />
       <Footer />
     </>
   );

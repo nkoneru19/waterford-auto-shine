@@ -123,7 +123,7 @@ export function Header() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              Get a Quote
+              Receive a Free Quote
             </button>
           </nav>
 
@@ -184,7 +184,7 @@ export function Header() {
                   minHeight: "44px",
                 }}
               >
-                Get a Quote
+                Receive a Free Quote
               </button>
             </nav>
           </motion.div>
