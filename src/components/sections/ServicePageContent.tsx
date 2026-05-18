@@ -33,7 +33,7 @@ export default function ServicePageContent({
         className="relative pt-28 pb-16 sm:pt-36 sm:pb-24"
         style={{ backgroundColor: "var(--color-surface-dark)" }}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeUp(0)}>
             <p
               className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
@@ -52,7 +52,7 @@ export default function ServicePageContent({
               {service.headline}
             </h1>
             <p
-              className="mt-5 max-w-2xl text-lg"
+              className="mt-5 mx-auto max-w-2xl text-lg"
               style={{ lineHeight: 1.7, color: "rgba(255,255,255,0.6)" }}
             >
               {service.description}
