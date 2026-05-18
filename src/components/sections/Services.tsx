@@ -20,6 +20,13 @@ const exteriorItems = [
   "Hand Wax",
 ];
 
+const completeExtras = [
+  "Clay Bar Treatment",
+  "Sealant Application",
+  "Compound/Polish",
+  "Smoke Removal",
+];
+
 const interiorPricing = [
   { vehicle: "Sedans", price: "$200+" },
   { vehicle: "Midsize & Trucks", price: "$225+" },
@@ -31,6 +38,56 @@ const completePricing = [
   { vehicle: "Midsize & Trucks", price: "$350+" },
   { vehicle: "Large SUVs & Minivans", price: "$375+" },
 ];
+
+function QuoteButton({ variant = "light" }: { variant?: "light" | "dark" }) {
+  if (variant === "dark") {
+    return (
+      <a
+        href="#hero-form"
+        className="lab-bubbles mt-8 inline-block w-full rounded-xl py-4 px-8 font-semibold text-center text-white transition-all duration-200"
+        style={{
+          backgroundColor: "var(--color-accent)",
+          boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+          e.currentTarget.style.boxShadow =
+            "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0) scale(1)";
+          e.currentTarget.style.boxShadow =
+            "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
+        }}
+      >
+        Get My Quote Today
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href="#hero-form"
+      className="mt-8 inline-block w-full rounded-xl py-4 px-8 font-semibold text-center transition-all duration-200"
+      style={{
+        color: "var(--color-accent)",
+        border: "2px solid var(--color-accent)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = "var(--color-accent)";
+        e.currentTarget.style.color = "#fff";
+        e.currentTarget.style.transform = "translateY(-2px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = "transparent";
+        e.currentTarget.style.color = "var(--color-accent)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
+    >
+      Get My Quote Today
+    </a>
+  );
+}
 
 export default function Services() {
   return (
@@ -60,13 +117,64 @@ export default function Services() {
             className="mt-3 text-base"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            Every detail includes premium products and our full attention. Pricing varies by vehicle size.
+            Every detail includes premium products and our full attention.
+            Pricing varies by vehicle size.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Interior Detail Card */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Exterior Detail Card */}
           <AnimatedSection delay={0}>
+            <div
+              className="rounded-2xl p-8 md:p-10 h-full flex flex-col transition-shadow duration-300"
+              style={{
+                backgroundColor: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
+                boxShadow: "0 4px 16px oklch(0.1 0.02 250 / 0.04)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 8px 24px oklch(0.55 0.2 250 / 0.08)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.2 250 / 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 4px 16px oklch(0.1 0.02 250 / 0.04)";
+                e.currentTarget.style.borderColor = "var(--color-border)";
+              }}
+            >
+              <h3
+                className="font-[var(--font-heading)] text-2xl font-bold mb-6"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Exterior Detail
+              </h3>
+
+              <ul className="space-y-2 mb-8">
+                {exteriorItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: "var(--color-accent)" }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto">
+                <QuoteButton variant="light" />
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Interior Detail Card */}
+          <AnimatedSection delay={0.08}>
             <div
               className="rounded-2xl p-8 md:p-10 h-full flex flex-col transition-shadow duration-300"
               style={{
@@ -99,7 +207,6 @@ export default function Services() {
                 From $200
               </p>
 
-              {/* What's Included */}
               <ul className="space-y-2 mb-8">
                 {interiorItems.map((item) => (
                   <li
@@ -117,7 +224,10 @@ export default function Services() {
               </ul>
 
               {/* Pricing by vehicle size */}
-              <div className="mt-auto space-y-3 pt-6" style={{ borderTop: "1px solid var(--color-border)" }}>
+              <div
+                className="mt-auto space-y-3 pt-6"
+                style={{ borderTop: "1px solid var(--color-border)" }}
+              >
                 <p
                   className="font-mono text-xs uppercase tracking-[0.15em] mb-3"
                   style={{ color: "var(--color-text-muted)" }}
@@ -125,8 +235,14 @@ export default function Services() {
                   Pricing by Vehicle Size
                 </p>
                 {interiorPricing.map((tier) => (
-                  <div key={tier.vehicle} className="flex justify-between items-center">
-                    <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                  <div
+                    key={tier.vehicle}
+                    className="flex justify-between items-center"
+                  >
+                    <span
+                      className="text-sm"
+                      style={{ color: "var(--color-text-secondary)" }}
+                    >
                       {tier.vehicle}
                     </span>
                     <span
@@ -139,18 +255,12 @@ export default function Services() {
                 ))}
               </div>
 
-              <a
-                href="#hero-form"
-                className="mt-8 text-sm font-semibold transition-colors hover:underline"
-                style={{ color: "var(--color-accent)" }}
-              >
-                Get a Quote
-              </a>
+              <QuoteButton variant="light" />
             </div>
           </AnimatedSection>
 
           {/* Complete Detail Card (Featured) */}
-          <AnimatedSection delay={0.08}>
+          <AnimatedSection delay={0.16}>
             <div
               className="rounded-2xl p-8 md:p-10 h-full flex flex-col transition-shadow duration-300"
               style={{
@@ -200,7 +310,9 @@ export default function Services() {
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: "var(--color-accent-light)" }}
+                      style={{
+                        backgroundColor: "var(--color-accent-light)",
+                      }}
                     />
                     {item}
                   </li>
@@ -214,7 +326,7 @@ export default function Services() {
               >
                 Exterior
               </p>
-              <ul className="space-y-2 mb-8">
+              <ul className="space-y-2 mb-5">
                 {exteriorItems.map((item) => (
                   <li
                     key={item}
@@ -223,7 +335,34 @@ export default function Services() {
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: "var(--color-accent-light)" }}
+                      style={{
+                        backgroundColor: "var(--color-accent-light)",
+                      }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Additional services */}
+              <p
+                className="font-mono text-xs uppercase tracking-[0.15em] mb-2"
+                style={{ color: "rgba(255,255,255,0.4)" }}
+              >
+                Plus
+              </p>
+              <ul className="space-y-2 mb-8">
+                {completeExtras.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm"
+                    style={{ color: "rgba(255,255,255,0.7)" }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{
+                        backgroundColor: "var(--color-accent-light)",
+                      }}
                     />
                     {item}
                   </li>
@@ -231,7 +370,12 @@ export default function Services() {
               </ul>
 
               {/* Pricing by vehicle size */}
-              <div className="mt-auto space-y-3 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+              <div
+                className="mt-auto space-y-3 pt-6"
+                style={{
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                }}
+              >
                 <p
                   className="font-mono text-xs uppercase tracking-[0.15em] mb-3"
                   style={{ color: "rgba(255,255,255,0.4)" }}
@@ -239,8 +383,14 @@ export default function Services() {
                   Pricing by Vehicle Size
                 </p>
                 {completePricing.map((tier) => (
-                  <div key={tier.vehicle} className="flex justify-between items-center">
-                    <span className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <div
+                    key={tier.vehicle}
+                    className="flex justify-between items-center"
+                  >
+                    <span
+                      className="text-sm"
+                      style={{ color: "rgba(255,255,255,0.65)" }}
+                    >
                       {tier.vehicle}
                     </span>
                     <span
@@ -253,24 +403,7 @@ export default function Services() {
                 ))}
               </div>
 
-              <a
-                href="#hero-form"
-                className="lab-bubbles mt-8 inline-block rounded-xl py-4 px-8 font-semibold text-center text-white transition-all duration-200"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                  boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow = "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
-                }}
-              >
-                Book Your Detail
-              </a>
+              <QuoteButton variant="dark" />
             </div>
           </AnimatedSection>
         </div>
