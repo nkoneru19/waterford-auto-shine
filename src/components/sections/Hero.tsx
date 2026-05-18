@@ -110,7 +110,7 @@ export default function Hero() {
             className="font-[var(--font-heading)] text-xl font-bold mb-6"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Request a Free Quote
+            Get a Quote
           </p>
 
           <form className="space-y-4">
