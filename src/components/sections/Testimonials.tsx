@@ -2,7 +2,6 @@
 
 import { Star } from "@phosphor-icons/react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = {
   quote:
@@ -18,11 +17,6 @@ const supporting = [
   },
   {
     quote:
-      "Auto Shine had the most wallet friendly price out of the places I checked. Jon did a fantastic job and my Terrain looks as though it just rolled out of the showroom. I appreciate the attention to detail and I'll likely be back for a spring detailing.",
-    author: "Gary Marek",
-  },
-  {
-    quote:
       "Shout out to Waterford Auto Shine on Pontiac Lake Rd at Cass Lk Rd. These guys did an amazing job on the pet hair in my car. It looks brand new. My big Bear had the back seat of my car caked with hair and dirt from the park. They got it all. Definitely recommend!",
     author: "Mary B.",
   },
@@ -33,33 +27,8 @@ const supporting = [
   },
   {
     quote:
-      "Excellent service! They were incredibly professional and friendly, making the whole experience seamless. My car looks spotless, and they did an amazing job with the cleaning. I'll definitely be returning and highly recommend them!",
-    author: "Marissa Chandler",
-  },
-  {
-    quote:
       "We bought a used car directly from the owner and Waterford Auto Shine made it look like new again. They went above and beyond what I expected. We will definitely be back with our other vehicles.",
     author: "James Stanley",
-  },
-  {
-    quote:
-      "I took an old 2007 Suzuki that had not been cleaned in years. The staff was courteous and helpful. They were clear up front about the expectations, explaining options, cost and time. They did a wonderful job and despite the condition of the car were still able to complete it in one day.",
-    author: "Scott Snider",
-  },
-  {
-    quote:
-      "They did an awesome job on my 2021 Blazer on the outside and inside. They did a wash and wax and cleaned the floor mats and did the tires and rims, windows and also did the door panels. It looked awesome and they did a great job, very happy with the results.",
-    author: "Dianna Teal",
-  },
-  {
-    quote:
-      "The staff gave my car a very thorough cleaning for which I am most grateful. I highly recommend them to all my friends and colleagues.",
-    author: "Teresita Lipar",
-  },
-  {
-    quote:
-      "Just had my truck detailed and wanted to say thanks. They were very friendly and did an excellent job.",
-    author: "Steve Krumrey",
   },
 ];
 
@@ -79,8 +48,6 @@ function Stars({ size = 20 }: { size?: number }) {
 }
 
 export default function Testimonials() {
-  const isMobile = useIsMobile();
-  const visibleReviews = isMobile ? supporting.slice(0, 5) : supporting;
 
   return (
     <section
@@ -140,7 +107,7 @@ export default function Testimonials() {
           />
 
           <div className="flex gap-5 animate-scroll-left hover:[animation-play-state:paused]">
-            {[...visibleReviews, ...visibleReviews].map((t, i) => (
+            {[...supporting, ...supporting].map((t, i) => (
               <div
                 key={i}
                 className="shrink-0 w-[340px] sm:w-[380px] rounded-2xl p-8"
