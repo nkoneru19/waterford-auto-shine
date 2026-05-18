@@ -67,7 +67,7 @@ export default function Hero() {
             style={{ color: "var(--color-text-secondary)" }}
           >
             Professional hand wash and detailing with premium products and a
-            finish you can see yourself in. Cars, trucks, and SUVs.
+            finish you can see yourself in. Sedans, trucks, and SUVs.
           </motion.p>
 
           {/* Phone CTA — visible on mobile where form is below */}
