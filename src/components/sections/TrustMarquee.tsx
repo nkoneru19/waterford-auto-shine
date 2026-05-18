@@ -5,7 +5,7 @@ const items = [
   "Locally Owned",
   "4.8 Star Rating",
   "45+ Google Reviews",
-  "Boats & RVs",
+  "Cars, Trucks & SUVs",
   "Detailing from $45",
   "Satisfaction Guaranteed",
   "10+ Years Experience",

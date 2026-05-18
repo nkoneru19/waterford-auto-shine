@@ -11,7 +11,7 @@ const reviews = [
   },
   {
     author: "David K.",
-    text: "Best detailing service in Waterford! They took my boat from winter storage grime to absolutely gleaming. Will be back every season.",
+    text: "Best detailing service in Waterford! They took my truck from road grime to absolutely gleaming. Will definitely be back.",
     date: "1 month ago",
   },
   {

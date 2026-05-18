@@ -12,7 +12,7 @@ const featured = {
 const supporting = [
   {
     quote:
-      "Best detailing service in Waterford! They took my boat from winter storage grime to absolutely gleaming. Will be back every season.",
+      "Best detailing service in Waterford! They took my truck from road grime to absolutely gleaming. Will definitely be back.",
     author: "David K.",
   },
   {

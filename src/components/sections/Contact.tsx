@@ -68,7 +68,7 @@ export default function Contact() {
               <Select
                 label="Vehicle Type"
                 name="vehicle"
-                options={["Car", "SUV", "Truck", "Boat", "RV", "Other"]}
+                options={["Car", "SUV", "Truck", "Other"]}
               />
               <Select
                 label="Service Interested In"
@@ -77,8 +77,6 @@ export default function Contact() {
                   "Full Detail",
                   "Interior Detail",
                   "Exterior Detail",
-                  "Boat Detailing",
-                  "RV Cleaning",
                   "Express Wash",
                 ]}
               />

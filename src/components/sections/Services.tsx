@@ -28,18 +28,6 @@ const services = [
       "Quick but thorough hand wash with vacuum service. Perfect for regular maintenance.",
     price: "$45+",
   },
-  {
-    title: "Boat Detailing",
-    description:
-      "Full season boat detailing to restore your vessel's exterior and get it water-ready.",
-    price: "$200+",
-  },
-  {
-    title: "RV Cleaning",
-    description:
-      "Complete RV wash and detail for recreational vehicles of all sizes.",
-    price: "$250+",
-  },
 ];
 
 export default function Services() {
