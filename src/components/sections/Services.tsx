@@ -21,6 +21,12 @@ const exteriorItems = [
   "Hand Wax",
 ];
 
+const exteriorPricing = [
+  { vehicle: "Sedans", price: "$75+" },
+  { vehicle: "Midsize & Trucks", price: "$100+" },
+  { vehicle: "Large SUVs & Minivans", price: "$125+" },
+];
+
 const completeExtras = [
   "Clay Bar Treatment",
   "Sealant Application",
@@ -146,11 +152,17 @@ export default function Services() {
               }}
             >
               <h3
-                className="font-[var(--font-heading)] text-2xl font-bold mb-6"
+                className="font-[var(--font-heading)] text-2xl font-bold mb-2"
                 style={{ color: "var(--color-text-primary)" }}
               >
                 Exterior Detail
               </h3>
+              <p
+                className="font-[var(--font-heading)] text-3xl font-bold mb-6"
+                style={{ color: "var(--color-accent)" }}
+              >
+                From $75
+              </p>
 
               <ul className="space-y-2 mb-8">
                 {exteriorItems.map((item) => (
@@ -168,7 +180,36 @@ export default function Services() {
                 ))}
               </ul>
 
-              <div className="mt-auto">
+              {/* Pricing by vehicle size */}
+              <div
+                className="mt-auto space-y-3 pt-6"
+                style={{ borderTop: "1px solid var(--color-border)" }}
+              >
+                <p
+                  className="font-mono text-xs uppercase tracking-[0.15em] mb-3"
+                  style={{ color: "var(--color-text-muted)" }}
+                >
+                  Pricing by Vehicle Size
+                </p>
+                {exteriorPricing.map((tier) => (
+                  <div
+                    key={tier.vehicle}
+                    className="flex justify-between items-center"
+                  >
+                    <span
+                      className="text-sm"
+                      style={{ color: "var(--color-text-secondary)" }}
+                    >
+                      {tier.vehicle}
+                    </span>
+                    <span
+                      className="font-[var(--font-heading)] font-bold"
+                      style={{ color: "var(--color-text-primary)" }}
+                    >
+                      {tier.price}
+                    </span>
+                  </div>
+                ))}
                 <QuoteButton variant="dark" />
               </div>
             </div>
