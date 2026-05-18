@@ -23,9 +23,9 @@ function FacebookIcon({ size = 20 }: { size?: number }) {
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Get a Quote", href: "/quote" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Reviews", href: "/#reviews" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 const services = [
@@ -113,18 +113,33 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4
-              className="font-semibold text-sm uppercase tracking-wider mb-4"
-              style={{ color: "var(--color-text-inverse)" }}
+            <Link
+              href="/services"
+              className="font-semibold text-sm uppercase tracking-wider mb-4 block transition-colors"
+              style={{
+                color: "var(--color-text-inverse)",
+                transitionDuration: "200ms",
+                transitionTimingFunction: "var(--ease-out-quart)",
+              }}
             >
               Services
-            </h4>
+            </Link>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+                  <Link
+                    href="/services"
+                    className="text-sm transition-colors"
+                    style={{
+                      color: "var(--color-text-muted)",
+                      transitionDuration: "200ms",
+                      transitionTimingFunction: "var(--ease-out-quart)",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-text-inverse)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
+                  >
                     {service}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>
