@@ -60,10 +60,6 @@
   --animate-marquee-left: marquee-left 60s linear infinite;
   --animate-scroll-left: scroll-left 30s linear infinite;
 
-  @media (max-width: 640px) {
-    --animate-scroll-left: scroll-left 18s linear infinite;
-  }
-
   /* Keyframes */
   @keyframes fade-in {
     from { opacity: 0; }
@@ -247,6 +243,13 @@ p, li, blockquote {
 ::selection {
   background: var(--color-accent-glow);
   color: var(--color-accent-dark);
+}
+
+/* ===== Mobile Carousel Speed ===== */
+@media (max-width: 640px) {
+  .animate-scroll-left {
+    animation-duration: 12s !important;
+  }
 }
 
 /* ===== Reduced Motion ===== */
