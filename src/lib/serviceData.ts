@@ -18,7 +18,7 @@ export const services: ServiceData[] = [
     headline: "Make Your Car Shine Like New",
     description:
       "A thorough hand wash and exterior detail that restores your vehicle's finish. We treat every panel, wheel, and trim piece with premium products for a showroom-quality result.",
-    startingPrice: "$75",
+    startingPrice: "$75 – $125",
     items: [
       "Hand Wash & Dry",
       "Door Jambs",
@@ -38,7 +38,7 @@ export const services: ServiceData[] = [
     headline: "A Deep Clean for Every Surface Inside",
     description:
       "From headliner to carpet, we deep clean and condition every interior surface. Stains, odors, and built-up grime don't stand a chance.",
-    startingPrice: "$200",
+    startingPrice: "$200 – $275+",
     items: [
       "Vacuum",
       "Plastics & Vinyl Cleaning",
@@ -60,7 +60,7 @@ export const services: ServiceData[] = [
     headline: "The Full Treatment — Inside and Out",
     description:
       "Our most comprehensive package. Everything from our interior and exterior services, plus paint correction, clay bar treatment, and ceramic sealant for maximum protection and shine.",
-    startingPrice: "$325",
+    startingPrice: "$325 – $375",
     badge: "Best Value",
     featured: true,
     items: [

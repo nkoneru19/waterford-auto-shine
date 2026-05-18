@@ -161,7 +161,7 @@ export default function Services() {
                 className="font-[var(--font-heading)] text-3xl font-bold mb-6"
                 style={{ color: "var(--color-accent)" }}
               >
-                From $75
+                From $75 – $125
               </p>
 
               <ul className="space-y-2 mb-8">
@@ -246,7 +246,7 @@ export default function Services() {
                 className="font-[var(--font-heading)] text-3xl font-bold mb-6"
                 style={{ color: "var(--color-accent)" }}
               >
-                From $200
+                From $200 – $275+
               </p>
 
               <ul className="space-y-2 mb-8">
@@ -333,7 +333,7 @@ export default function Services() {
                 className="font-[var(--font-heading)] text-3xl font-bold mb-6"
                 style={{ color: "var(--color-accent-light)" }}
               >
-                From $325
+                From $325 – $375
               </p>
 
               <p

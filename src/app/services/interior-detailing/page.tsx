@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Interior Detailing Waterford MI | Deep Clean & Shampoo | Waterford Auto Shine",
   description:
-    "Professional interior car detailing in Waterford Township, MI. Steam cleaning, carpet shampoo, leather conditioning, and headliner cleaning. Starting at $200.",
+    "Professional interior car detailing in Waterford Township, MI. Steam cleaning, carpet shampoo, leather conditioning, and headliner cleaning. From $200 to $275+.",
 };
 
 export default function InteriorDetailingPage() {

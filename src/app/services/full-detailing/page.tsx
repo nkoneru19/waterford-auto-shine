@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Full Detail Waterford MI | Interior + Exterior | Waterford Auto Shine",
   description:
-    "Complete auto detailing in Waterford Township, MI. Full interior and exterior detail with clay bar, paint correction, ceramic sealant, and smoke removal. Starting at $325.",
+    "Complete auto detailing in Waterford Township, MI. Full interior and exterior detail with clay bar, paint correction, ceramic sealant, and smoke removal. From $325 to $375.",
 };
 
 export default function FullDetailingPage() {

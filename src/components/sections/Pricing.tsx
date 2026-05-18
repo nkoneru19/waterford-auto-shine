@@ -4,22 +4,22 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const tiers = [
   {
-    name: "Express Wash",
-    price: "$45",
-    description: "Quick hand wash, vacuum, windows, tire shine",
+    name: "Exterior Detail",
+    price: "$75 – $125",
+    description: "Hand wash & dry, door jambs, rims & tires, tire shine, hand wax",
     popular: false,
   },
   {
-    name: "Full Detail",
-    price: "$150",
-    description: "Complete interior + exterior. Clay bar, polish, wax. The works.",
+    name: "Complete Detail",
+    price: "$325 – $375",
+    description: "Full interior + exterior with clay bar, polish, sealant, and smoke removal.",
     popular: true,
   },
   {
-    name: "Premium Detail",
-    price: "$250",
+    name: "Interior Detail",
+    price: "$200 – $275+",
     description:
-      "Everything in Full Detail plus paint correction, ceramic sealant, engine bay",
+      "Vacuum, steam clean, carpet shampoo, leather conditioning, headliner, windows",
     popular: false,
   },
 ];
@@ -120,19 +120,19 @@ export default function Pricing() {
                 className="font-[var(--font-heading)] text-2xl font-bold"
                 style={{ color: "#fff" }}
               >
-                Full Detail
+                Complete Detail
               </h3>
               <p
                 className="font-[var(--font-heading)] text-5xl md:text-6xl font-bold mt-4 mb-6"
                 style={{ color: "var(--color-accent-light)" }}
               >
-                $150
+                $325 – $375
               </p>
               <p
                 className="text-lg mb-10 max-w-[40ch]"
                 style={{ color: "rgba(255,255,255,0.65)" }}
               >
-                Complete interior + exterior. Clay bar, polish, wax. The works.
+                Full interior + exterior with clay bar, polish, sealant, and smoke removal.
               </p>
               <a
                 href="#contact"
