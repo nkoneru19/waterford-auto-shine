@@ -16,9 +16,8 @@ export const siteConfig = {
     "https://maps.google.com/?q=3496+Pontiac+Lake+Rd+Waterford+Township+MI+48328",
   hours: {
     weekday: "9:00 AM - 5:00 PM",
-    friday: "9:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 6:00 PM",
-    sunday: "10:00 AM - 3:00 PM",
+    saturday: "9:00 AM - 5:00 PM",
+    sunday: "Closed",
   },
   rating: 4.8,
   reviewCount: 45,

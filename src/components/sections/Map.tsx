@@ -118,15 +118,9 @@ export default function Map() {
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   <div className="flex justify-between gap-8">
-                    <span>Monday &ndash; Thursday</span>
+                    <span>Monday &ndash; Saturday</span>
                     <span style={{ color: "var(--color-text-primary)" }}>
                       {siteConfig.hours.weekday}
-                    </span>
-                  </div>
-                  <div className="flex justify-between gap-8">
-                    <span>Friday &ndash; Saturday</span>
-                    <span style={{ color: "var(--color-text-primary)" }}>
-                      {siteConfig.hours.friday}
                     </span>
                   </div>
                   <div className="flex justify-between gap-8">

@@ -81,7 +81,7 @@ const faqs = [
   {
     question: "What are your hours of operation?",
     answer:
-      "We're open Monday through Thursday 9 AM to 5 PM, Friday and Saturday 9 AM to 3 PM, and closed on Sundays.",
+      "We're open Monday through Saturday 9 AM to 5 PM. We're closed on Sundays.",
   },
   {
     question: "Can detailing help with pet hair removal?",
