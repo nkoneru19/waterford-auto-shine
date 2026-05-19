@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Accessibility | Waterford Auto Shine | Waterford Township, MI",
   description:
     "Accessibility statement for Waterford Auto Shine. Learn about our commitment to making our website accessible to everyone.",
+  alternates: {
+    canonical: "https://waterfordautoshine.com/accessibility",
+  },
+  openGraph: {
+    title: "Accessibility | Waterford Auto Shine",
+    description:
+      "Accessibility statement for Waterford Auto Shine. Learn about our commitment to making our website accessible to everyone.",
+    url: "https://waterfordautoshine.com/accessibility",
+  },
 };
 
 export default function AccessibilityPage() {

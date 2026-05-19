@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Terms of Service | Waterford Auto Shine | Waterford Township, MI",
   description:
     "Terms of service for Waterford Auto Shine in Waterford Township, MI. Review our terms and conditions for using our website and detailing services.",
+  alternates: {
+    canonical: "https://waterfordautoshine.com/terms-of-service",
+  },
+  openGraph: {
+    title: "Terms of Service | Waterford Auto Shine",
+    description:
+      "Terms of service for Waterford Auto Shine in Waterford Township, MI. Review our terms and conditions for using our website and detailing services.",
+    url: "https://waterfordautoshine.com/terms-of-service",
+  },
 };
 
 export default function TermsOfServicePage() {

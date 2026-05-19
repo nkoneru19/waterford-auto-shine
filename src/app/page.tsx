@@ -13,7 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <DesktopEffects />
       <Hero />
       <GoogleReviews />
@@ -26,6 +26,6 @@ export default function Home() {
       <FinalCTA />
       <Map />
       <Footer />
-    </>
+    </main>
   );
 }
