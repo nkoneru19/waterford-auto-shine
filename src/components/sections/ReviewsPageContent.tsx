@@ -227,8 +227,8 @@ export default function ReviewsPageContent() {
           <AnimatedSection delay={0.2}>
             <div className="mt-16 text-center">
               <p
-                className="text-lg mb-6 mx-auto"
-                style={{ color: "var(--color-text-secondary)" }}
+                className="text-lg md:text-2xl font-bold mb-6 mx-auto"
+                style={{ color: "#000000" }}
               >
                 Ready to see the difference for yourself?
               </p>
