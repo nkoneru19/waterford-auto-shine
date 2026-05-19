@@ -227,7 +227,7 @@ export default function ReviewsPageContent() {
           <AnimatedSection delay={0.2}>
             <div className="mt-16 text-center">
               <p
-                className="text-lg mb-6"
+                className="text-lg mb-6 mx-auto"
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 Ready to see the difference for yourself?
@@ -235,7 +235,7 @@ export default function ReviewsPageContent() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/quote"
-                  className="text-sm font-semibold px-8 py-3 rounded-lg transition-transform inline-block"
+                  className="text-base font-semibold px-10 py-4 rounded-lg transition-transform inline-block"
                   style={{
                     backgroundColor: "var(--color-accent)",
                     color: "var(--color-text-inverse)",
@@ -249,7 +249,7 @@ export default function ReviewsPageContent() {
                   href={siteConfig.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold px-8 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
+                  className="text-base font-semibold px-10 py-4 rounded-lg transition-colors inline-flex items-center gap-2"
                   style={{
                     border: "1px solid var(--color-border)",
                     color: "var(--color-text-primary)",
@@ -257,7 +257,7 @@ export default function ReviewsPageContent() {
                   }}
                 >
                   <GoogleLogo />
-                  Leave Us a Review
+                  Leave a Review
                 </a>
               </div>
             </div>
