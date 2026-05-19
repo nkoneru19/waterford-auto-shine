@@ -80,7 +80,7 @@ export default function Hero() {
           >
             <Link
               href="/quote"
-              className="lab-bubbles inline-block rounded-xl py-4 px-8 font-semibold text-white transition-all duration-200"
+              className="lab-bubbles inline-block rounded-xl py-5 px-10 text-lg font-semibold text-white transition-all duration-200"
               style={{
                 backgroundColor: "var(--color-accent)",
                 boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.25)",
