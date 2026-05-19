@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Phone } from "@phosphor-icons/react/dist/ssr";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
@@ -115,16 +116,28 @@ export default function ServiceAreaPage() {
                 {siteConfig.phone}
               </a>
             </p>
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-colors"
-              style={{
-                backgroundColor: "var(--color-accent)",
-                color: "#fff",
-              }}
-            >
-              Get a Free Quote
-            </Link>
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <a
+                href={siteConfig.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-colors"
+                style={{
+                  backgroundColor: "var(--color-accent)",
+                }}
+              >
+                <Phone size={20} weight="bold" />
+                Call Us
+              </a>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold transition-colors"
+                style={{
+                  backgroundColor: "var(--color-surface-dark)",
+                  color: "#fff",
+                }}
+              >
+                Get a Free Quote
+              </Link>
+            </div>
           </div>
         </div>
       </section>
