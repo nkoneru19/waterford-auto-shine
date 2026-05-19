@@ -89,7 +89,7 @@ export default function ServiceAreaPage() {
           </div>
 
           <div
-            className="mt-14 pt-10 max-w-2xl"
+            className="mt-14 pt-10 text-center"
             style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
           >
             <h2
@@ -116,7 +116,7 @@ export default function ServiceAreaPage() {
                 {siteConfig.phone}
               </a>
             </p>
-            <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={siteConfig.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-colors"
@@ -129,13 +129,12 @@ export default function ServiceAreaPage() {
               </a>
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-colors"
                 style={{
-                  backgroundColor: "var(--color-surface-dark)",
-                  color: "#fff",
+                  backgroundColor: "var(--color-accent)",
                 }}
               >
-                Get a Free Quote
+                Get a Quote
               </Link>
             </div>
           </div>
