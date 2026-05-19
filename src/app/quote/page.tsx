@@ -390,7 +390,7 @@ export default function QuotePage() {
                   {[
                     "We'll respond within a few hours",
                     "Personalized quote based on your vehicle",
-                    "No obligation — just honest pricing",
+                    "No obligation, just honest pricing",
                     "Premium products on every detail",
                   ].map((item) => (
                     <li

@@ -57,7 +57,7 @@ export const services: ServiceData[] = [
   {
     slug: "full-detailing",
     name: "Complete Detail",
-    headline: "The Full Treatment — Inside and Out",
+    headline: "The Full Treatment: Inside and Out",
     description:
       "Our most comprehensive package. Everything from our interior and exterior services, plus paint correction and clay bar treatment for maximum protection and shine.",
     startingPrice: "$325 – $375",

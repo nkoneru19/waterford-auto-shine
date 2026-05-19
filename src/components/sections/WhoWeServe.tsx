@@ -54,7 +54,7 @@ export default function WhoWeServe() {
             className="mt-4 text-lg"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            Cars, trucks, SUVs — if it has wheels, we make it shine.
+            Cars, trucks, SUVs... if it has wheels, we make it shine.
           </p>
         </AnimatedSection>
 

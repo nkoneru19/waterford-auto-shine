@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "How long does a detail take?",
     answer:
-      "A detail typically takes 2-4 hours depending on the size and condition of your vehicle. We never rush — your car gets the time it deserves.",
+      "A detail typically takes 2-4 hours depending on the size and condition of your vehicle. We never rush. Your car gets the time it deserves.",
   },
   {
     question: "Do you offer mobile detailing?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "What's the difference between Interior Detail and Complete Detail?",
     answer:
-      "Our Interior Detail covers everything inside — vacuum, steam cleaning, carpet shampoo, leather conditioning, and more. The Complete Detail adds a full exterior package: hand wash, door jambs, rims and tires, and hand wax.",
+      "Our Interior Detail covers everything inside: vacuum, steam cleaning, carpet shampoo, leather conditioning, and more. The Complete Detail adds a full exterior package: hand wash, door jambs, rims and tires, and hand wax.",
   },
   {
     question: "What types of vehicles do you detail?",
