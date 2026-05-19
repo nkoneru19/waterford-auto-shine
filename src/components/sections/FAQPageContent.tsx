@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "How often should I get my vehicle detailed?",
     answer:
-      "We recommend a full detail every 3-6 months. Regular detailing protects your interior and exterior, and maintains your vehicle's value.",
+      "We recommend a full detail every 6-9 months. Regular detailing protects your interior and exterior, and maintains your vehicle's value.",
   },
   {
     question: "Do I need an appointment?",
