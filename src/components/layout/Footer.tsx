@@ -26,6 +26,7 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Reviews", href: "/reviews" },
   { label: "FAQ", href: "/faq" },
+  { label: "Service Area", href: "/service-area" },
 ];
 
 const services = [
@@ -92,7 +93,7 @@ export function Footer() {
               className="font-semibold text-sm uppercase tracking-wider mb-4"
               style={{ color: "var(--color-text-inverse)" }}
             >
-              Quick Links
+              Navigation
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
