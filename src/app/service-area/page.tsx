@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Phone } from "@phosphor-icons/react/dist/ssr";
+import { Phone, Envelope } from "@phosphor-icons/react/dist/ssr";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
@@ -107,7 +106,8 @@ export default function ServiceAreaPage() {
             >
               {siteConfig.address.full}
             </p>
-            <p className="mb-6">
+            <p className="flex items-center justify-center gap-2 mb-3">
+              <Phone size={18} weight="bold" style={{ color: "var(--color-accent)" }} />
               <a
                 href={siteConfig.phoneHref}
                 className="font-semibold transition-colors"
@@ -116,27 +116,16 @@ export default function ServiceAreaPage() {
                 {siteConfig.phone}
               </a>
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <p className="flex items-center justify-center gap-2">
+              <Envelope size={18} weight="bold" style={{ color: "var(--color-accent)" }} />
               <a
-                href={siteConfig.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-colors"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                }}
+                href="mailto:Waterfordautoshine@gmail.com"
+                className="font-semibold transition-colors"
+                style={{ color: "var(--color-accent)" }}
               >
-                <Phone size={20} weight="bold" />
-                Call Us
+                Waterfordautoshine@gmail.com
               </a>
-              <Link
-                href="/quote"
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-colors"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                }}
-              >
-                Get a Quote
-              </Link>
-            </div>
+            </p>
           </div>
         </div>
       </section>
