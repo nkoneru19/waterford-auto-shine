@@ -14,7 +14,7 @@ const audiences = [
     icon: Wrench,
     title: "Car Enthusiasts",
     description:
-      "Paint correction, ceramic coating, and the obsessive care your ride deserves.",
+      "Paint correction, clay bar treatment, and the obsessive care your ride deserves.",
   },
   {
     icon: Jeep,

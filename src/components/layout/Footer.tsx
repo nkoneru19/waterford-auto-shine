@@ -29,12 +29,10 @@ const quickLinks = [
 ];
 
 const services = [
-  "Hand Wash",
-  "Interior Detailing",
-  "Exterior Detailing",
-  "Full Detail",
-  "Ceramic Coating",
-  "Paint Correction",
+  { label: "Interior Detailing", href: "/services/interior-detailing" },
+  { label: "Exterior Detailing", href: "/services/exterior-detailing" },
+  { label: "Complete Detail", href: "/services/full-detailing" },
+  { label: "Paint Correction", href: "/services" },
 ];
 
 export function Footer() {
@@ -57,7 +55,7 @@ export function Footer() {
               className="mt-1 text-sm"
               style={{ color: "var(--color-text-muted)" }}
             >
-              {siteConfig.tagline}. Professional hand wash and detailing in Waterford Township.
+              {siteConfig.tagline}. Professional detailing in Waterford Township.
             </p>
           </div>
           <a
@@ -126,9 +124,9 @@ export function Footer() {
             </Link>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
+                <li key={service.label}>
                   <Link
-                    href="/services"
+                    href={service.href}
                     className="text-sm transition-colors"
                     style={{
                       color: "var(--color-text-muted)",
@@ -138,7 +136,7 @@ export function Footer() {
                     onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-text-inverse)"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
                   >
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}

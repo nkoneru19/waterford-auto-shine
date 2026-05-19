@@ -106,7 +106,7 @@ export default function Testimonials() {
             }}
           />
 
-          <div className="flex gap-5 animate-scroll-left hover:[animation-play-state:paused]">
+          <div className="flex gap-5 animate-scroll-left hover:[animation-play-state:paused]" style={{ animationDuration: "20s" }}>
             {[...supporting, ...supporting].map((t, i) => (
               <div
                 key={i}

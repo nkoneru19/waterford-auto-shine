@@ -59,7 +59,7 @@ export const services: ServiceData[] = [
     name: "Complete Detail",
     headline: "The Full Treatment — Inside and Out",
     description:
-      "Our most comprehensive package. Everything from our interior and exterior services, plus paint correction, clay bar treatment, and ceramic sealant for maximum protection and shine.",
+      "Our most comprehensive package. Everything from our interior and exterior services, plus paint correction and clay bar treatment for maximum protection and shine.",
     startingPrice: "$325 – $375",
     badge: "Best Value",
     featured: true,
