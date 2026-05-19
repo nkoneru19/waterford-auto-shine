@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Phone, MapPin, Clock } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -15,13 +16,13 @@ export default function Map() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         {/* Section label + heading */}
         <p
-          className="text-sm font-semibold uppercase tracking-widest mb-3"
+          className="text-sm font-semibold uppercase tracking-widest mb-3 text-center"
           style={{ color: "var(--color-accent)" }}
         >
           Visit Us
         </p>
         <h2
-          className="text-3xl sm:text-4xl font-bold mb-10"
+          className="text-3xl sm:text-4xl font-bold mb-10 text-center"
           style={{
             fontFamily: "var(--font-heading)",
             color: "var(--color-text-primary)",
@@ -131,6 +132,54 @@ export default function Map() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <a
+                href={siteConfig.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold text-white transition-all duration-200 w-full sm:w-auto"
+                style={{
+                  backgroundColor: "var(--color-accent)",
+                  boxShadow: "0 8px 24px oklch(0.55 0.2 250 / 0.3)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform =
+                    "translateY(-2px) scale(1.02)";
+                  e.currentTarget.style.boxShadow =
+                    "0 12px 32px oklch(0.55 0.2 250 / 0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 24px oklch(0.55 0.2 250 / 0.3)";
+                }}
+              >
+                <Phone size={20} weight="bold" />
+                Call Us
+              </a>
+              <Link
+                href="/quote"
+                className="lab-bubbles inline-flex items-center justify-center gap-2 rounded-xl px-10 py-4 text-lg font-bold transition-all duration-200 w-full sm:w-auto"
+                style={{
+                  backgroundColor: "var(--color-surface-dark)",
+                  color: "#fff",
+                  boxShadow: "0 8px 24px oklch(0.1 0.02 250 / 0.15)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform =
+                    "translateY(-2px) scale(1.02)";
+                  e.currentTarget.style.boxShadow =
+                    "0 12px 32px oklch(0.1 0.02 250 / 0.25)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 24px oklch(0.1 0.02 250 / 0.15)";
+                }}
+              >
+                Get a Free Quote
+              </Link>
             </div>
 
           </div>
