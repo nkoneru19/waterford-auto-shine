@@ -1,0 +1,16 @@
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            Or call us directly:{" "}
+            <a
+              href={siteConfig.phoneHref}
+              className="font-semibold"
+              style={{ color: "var(--color-accent)" }}
+            >
+              {siteConfig.phone}
+            </a>
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

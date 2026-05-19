@@ -1,0 +1,218 @@
+
+  return (
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-all"
+      style={{
+        transitionDuration: "200ms",
+        transitionTimingFunction: "var(--ease-out-quart)",
+        backgroundColor: scrolled || !isHome
+          ? "color-mix(in oklch, var(--color-surface) 80%, transparent)"
+          : "transparent",
+        backdropFilter: scrolled || !isHome ? "blur(16px)" : "none",
+        WebkitBackdropFilter: scrolled || !isHome ? "blur(16px)" : "none",
+        borderBottom: scrolled || !isHome
+          ? "1px solid var(--color-border)"
+          : "1px solid transparent",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="font-bold text-lg"
+            style={{
+              fontFamily: "var(--font-heading)",
+              color: "var(--color-accent)",
+            }}
+          >
+            {siteConfig.name}
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => handleNav(link.href)}
+                className="font-medium text-sm transition-colors"
+                style={{
+                  color: "var(--color-text-secondary)",
+                  transitionDuration: "200ms",
+                  transitionTimingFunction: "var(--ease-out-quart)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--color-text-primary)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "var(--color-text-secondary)";
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
+
+            <a
+              href={siteConfig.phoneHref}
+              className="hidden lg:flex items-center gap-2 text-sm font-semibold transition-colors"
+              style={{
+                color: "var(--color-text-primary)",
+                transitionDuration: "200ms",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--color-accent)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--color-text-primary)";
+              }}
+            >
+              <Phone size={16} weight="bold" />
+              {siteConfig.phone}
+            </a>
+
+            <Link
+              href="/quote"
+              className="text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-text-inverse)",
+                transitionDuration: "200ms",
+                transitionTimingFunction: "var(--ease-out-quart)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Receive a Free Quote
+            </Link>
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden flex items-center justify-center"
+            style={{
+              color: "var(--color-text-primary)",
+              width: "44px",
+              height: "44px",
+            }}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <List size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            className="md:hidden overflow-hidden"
+            style={{
+              backgroundColor: "var(--color-surface)",
+              borderBottom: "1px solid var(--color-border)",
+            }}
+          >
+            <nav className="px-4 py-4 flex flex-col gap-2">
+              {navLinks.map((link) =>
+                link.label === "Services" ? (
+                  <div key={link.href}>
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className="w-full flex items-center justify-between text-left text-base font-medium rounded-lg transition-colors"
+                      style={{
+                        color: "var(--color-text-primary)",
+                        transitionDuration: "200ms",
+                        transitionTimingFunction: "var(--ease-out-quart)",
+                        padding: "12px",
+                        minHeight: "44px",
+                      }}
+                    >
+                      {link.label}
+                      <CaretDown
+                        size={18}
+                        weight="bold"
+                        style={{
+                          transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          transition: "transform 200ms ease",
+                        }}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.15, ease: [0.25, 1, 0.5, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="flex flex-col gap-1 pl-4">
+                            {[
+                              { label: "Interior Detail", href: "/services/interior-detailing" },
+                              { label: "Exterior Detail", href: "/services/exterior-detailing" },
+                              { label: "Complete Detail", href: "/services/full-detailing" },
+                            ].map((sub) => (
+                              <button
+                                key={sub.href}
+                                onClick={() => handleNav(sub.href)}
+                                className="text-left text-sm font-medium rounded-lg transition-colors"
+                                style={{
+                                  color: "var(--color-text-secondary)",
+                                  transitionDuration: "200ms",
+                                  padding: "10px 12px",
+                                  minHeight: "40px",
+                                }}
+                              >
+                                {sub.label}
+                              </button>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNav(link.href)}
+                    className="text-left text-base font-medium rounded-lg transition-colors"
+                    style={{
+                      color: "var(--color-text-primary)",
+                      transitionDuration: "200ms",
+                      transitionTimingFunction: "var(--ease-out-quart)",
+                      padding: "12px",
+                      minHeight: "44px",
+                    }}
+                  >
+                    {link.label}
+                  </button>
+                )
+              )}
+              <Link
+                href="/quote"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 text-sm font-semibold rounded-lg text-center block"
+                style={{
+                  backgroundColor: "var(--color-accent)",
+                  color: "var(--color-text-inverse)",
+                  padding: "12px 20px",
+                  minHeight: "44px",
+                }}
+              >
+                Receive a Free Quote
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

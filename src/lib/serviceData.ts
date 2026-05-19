@@ -18,7 +18,7 @@ export const services: ServiceData[] = [
     headline: "Make Your Car Shine Like New",
     description:
       "A thorough hand wash and exterior detail that restores your vehicle's finish. We treat every panel, wheel, and trim piece with premium products for a showroom-quality result.",
-    startingPrice: "$75 – $125",
+    startingPrice: "$125 – $175",
     items: [
       "Hand Wash & Dry",
       "Door Jambs",
@@ -27,9 +27,9 @@ export const services: ServiceData[] = [
       "Hand Wax",
     ],
     pricing: [
-      { vehicle: "Sedans", price: "$75+" },
-      { vehicle: "Midsize & Trucks", price: "$100+" },
-      { vehicle: "Large SUVs & Minivans", price: "$125+" },
+      { vehicle: "Sedans", price: "$125+" },
+      { vehicle: "Midsize & Trucks", price: "$150+" },
+      { vehicle: "Large SUVs & Minivans", price: "$175+" },
     ],
   },
   {

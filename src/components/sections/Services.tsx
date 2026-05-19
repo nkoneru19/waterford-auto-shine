@@ -22,9 +22,9 @@ const exteriorItems = [
 ];
 
 const exteriorPricing = [
-  { vehicle: "Sedans", price: "$75+" },
-  { vehicle: "Midsize & Trucks", price: "$100+" },
-  { vehicle: "Large SUVs & Minivans", price: "$125+" },
+  { vehicle: "Sedans", price: "$125+" },
+  { vehicle: "Midsize & Trucks", price: "$150+" },
+  { vehicle: "Large SUVs & Minivans", price: "$175+" },
 ];
 
 const completeExtras = [
@@ -118,7 +118,7 @@ export default function Services() {
               color: "var(--color-text-primary)",
             }}
           >
-            Transparent Pricing, No Surprises
+            Transparent Pricing, No Surprises.
           </h2>
           <p
             className="mt-3 text-base"

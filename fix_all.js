@@ -1,0 +1,1 @@
+const fs=require("fs");const h=fs.readFileSync("src/components/layout/Header_new.tsx","utf8");fs.writeFileSync("src/components/layout/Header.tsx",h.replace(/scrolled \|\| \!isHome/g,"showBackground"));const s=fs.readFileSync("ServicesOverview_fixed.txt","utf8");fs.writeFileSync("src/components/sections/ServicesOverview.tsx",s);console.log("Updated both files");

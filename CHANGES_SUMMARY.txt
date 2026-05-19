@@ -1,0 +1,24 @@
+=== CHANGES PREPARED ===
+
+FILE 1: src/components/layout/Header.tsx
+Status: PARTIALLY DONE - showBackground variable added but replacements pending
+
+Completed:
+✓ Added line 48: const showBackground = \!isHome || scrolled;
+
+Still needed:
+✗ Replace 4 instances of 'scrolled || \!isHome' with 'showBackground'
+  Line 54: backgroundColor: scrolled || \!isHome
+  Line 57: backdropFilter: scrolled || \!isHome
+  Line 58: WebkitBackdropFilter: scrolled || \!isHome
+  Line 59: borderBottom: scrolled || \!isHome
+
+Prepared intermediate file: src/components/layout/Header_new.tsx
+
+FILE 2: src/components/sections/ServicesOverview.tsx
+Status: READY TO REPLACE
+
+Change needed:
+✗ Line 44: Replace 'Professional Interior &amp; Exterior Detailing' with 'Professional Interior & Exterior Detailing'
+
+Prepared file: ServicesOverview_fixed.txt

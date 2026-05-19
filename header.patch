@@ -1,0 +1,11 @@
+--- src/components/layout/Header.tsx	2026-05-18 02:54:23
++++ src/components/layout/Header_new.tsx	2026-05-18 16:21:17
+@@ -44,6 +44,8 @@
+       el.scrollIntoView({ behavior: "smooth" });
+     }
+   };
++
++  const showBackground = !isHome || scrolled;
+ 
+   return (
+     <header
