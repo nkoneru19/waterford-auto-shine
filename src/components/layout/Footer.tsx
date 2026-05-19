@@ -35,6 +35,12 @@ const services = [
   { label: "Paint Correction", href: "/services" },
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Accessibility", href: "/accessibility" },
+];
+
 export function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--color-surface-dark)" }}>
@@ -79,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Middle: 3-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Quick Links */}
           <div>
             <h4
@@ -137,6 +143,35 @@ export function Footer() {
                     onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
                   >
                     {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal & Access */}
+          <div>
+            <h4
+              className="font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: "var(--color-text-inverse)" }}
+            >
+              Legal &amp; Access
+            </h4>
+            <ul className="space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors"
+                    style={{
+                      color: "var(--color-text-muted)",
+                      transitionDuration: "200ms",
+                      transitionTimingFunction: "var(--ease-out-quart)",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-text-inverse)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
