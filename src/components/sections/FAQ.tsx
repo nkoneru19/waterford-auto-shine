@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Do I need an appointment?",
     answer:
-      "Appointments are recommended, especially during busy seasons. Call us at (248) 618-8999 or use the contact form to schedule.",
+      "Appointments are not needed but highly recommended, especially during busy seasons. Call us at (248) 618-8999 or use the contact form to schedule.",
   },
 ];
 
