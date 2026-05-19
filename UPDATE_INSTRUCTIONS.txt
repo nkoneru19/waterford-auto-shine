@@ -1,8 +1,0 @@
-Files prepared for updating:
-1. src/components/layout/Header_new.tsx - Has showBackground variable added at line 48
-2. ServicesOverview_fixed.txt - Has & instead of &amp;
-
-To apply changes:
-sed -i '' 's/scrolled || \!isHome/showBackground/' src/components/layout/Header_new.tsx
-mv src/components/layout/Header_new.tsx src/components/layout/Header.tsx
-mv ServicesOverview_fixed.txt src/components/sections/ServicesOverview.tsx

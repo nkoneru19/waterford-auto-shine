@@ -1,1 +1,0 @@
-const fs = require('fs'); const path = 'src/app/globals.css'; let c = fs.readFileSync(path, 'utf8'); c = c.replace('100% { transform: translateX(-50%);', '100% { transform: translateX(-100%);'); c = c.replace('.animate-marquee-left {', '.animate-scroll-left {'); c = c.replace('animation-duration: 60s', 'animation-duration: 30s'); fs.writeFileSync(path, c); console.log('Fixed\!');

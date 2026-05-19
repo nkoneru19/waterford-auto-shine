@@ -1,1 +1,0 @@
-const fs=require('fs');let c=fs.readFileSync('src/components/layout/Header_new.tsx','utf8');c=c.replace(/scrolled \|\| \!isHome/g,'showBackground');fs.writeFileSync('src/components/layout/Header.tsx',c);console.log('Header.tsx updated')
