@@ -69,6 +69,18 @@ export default function Contact() {
 
               <div>
                 <p className="text-sm font-bold uppercase tracking-wide text-[var(--color-text-secondary)]">
+                  Email
+                </p>
+                <a
+                  href={`mailto:${FORM_EMAIL}`}
+                  className="mt-1 block text-lg font-medium text-[var(--color-accent)] transition-colors hover:opacity-80"
+                >
+                  {FORM_EMAIL}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-[var(--color-text-secondary)]">
                   Address
                 </p>
                 <p className="mt-1 text-lg text-[var(--color-text-primary)]">
