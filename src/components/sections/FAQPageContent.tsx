@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "What types of vehicles do you detail?",
     answer:
-      "We detail sedans, trucks, SUVs, and minivans. Exterior details range from $75 to $125, interior details from $200 to $275, and complete details from $325 to $375, depending on vehicle size.",
+      "We detail sedans, trucks, SUVs, and minivans. Exterior details range from $125 to $175, interior details from $200 to $275, and complete details from $325 to $375, depending on vehicle size.",
   },
   {
     question: "How often should I get my vehicle detailed?",

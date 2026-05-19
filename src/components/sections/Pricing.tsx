@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 const tiers = [
   {
     name: "Exterior Detail",
-    price: "$75 – $125",
+    price: "$125 – $175",
     description: "Hand wash & dry, door jambs, rims & tires, tire shine, hand wax",
     popular: false,
   },
