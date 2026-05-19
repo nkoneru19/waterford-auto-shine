@@ -88,6 +88,16 @@ const faqs = [
     answer:
       "Yes! Our interior detailing includes thorough vacuuming and steam cleaning that effectively removes pet hair from seats, carpets, and hard-to-reach crevices. We deal with pet hair all the time. It's one of our specialties.",
   },
+  {
+    question: "Can you remove the smell of smoke from my car?",
+    answer:
+      "Yes! We use professional-grade ozone treatment and deep interior cleaning to eliminate smoke odors, not just mask them. Most vehicles see a dramatic improvement after just one session.",
+  },
+  {
+    question: "Do you do paint correction?",
+    answer:
+      "Yes, we offer paint correction upon request to remove swirl marks, scratches, and oxidation for a showroom-quality finish.",
+  },
 ];
 
 export default function FAQPageContent() {
