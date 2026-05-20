@@ -53,7 +53,7 @@ export default function Gallery() {
             >
               <Image
                 src="/images/gallery-1.jpg"
-                alt="Professional detailing in workshop"
+                alt="Professional hand wash and exterior detailing at Waterford Auto Shine in Waterford Township, MI"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 66vw"
@@ -77,7 +77,7 @@ export default function Gallery() {
             >
               <Image
                 src="/images/gallery-2.jpg"
-                alt="Water beading on freshly detailed car"
+                alt="Water beading on freshly waxed car after professional auto detailing in Waterford, MI"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"

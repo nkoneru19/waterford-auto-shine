@@ -145,15 +145,15 @@ const comparisons = [
   {
     beforeSrc: "/images/before-1.jpg",
     afterSrc: "/images/after-1.jpg",
-    beforeAlt: "Dirty car interior before detailing",
-    afterAlt: "Clean car interior after detailing",
+    beforeAlt: "Dirty car interior before professional interior detailing at Waterford Auto Shine",
+    afterAlt: "Clean car interior after professional detailing service in Waterford, MI",
     label: "Interior Detail",
   },
   {
     beforeSrc: "/images/before-2.jpg",
     afterSrc: "/images/after-2.jpg",
-    beforeAlt: "Faded car paint before correction",
-    afterAlt: "Restored car paint after correction",
+    beforeAlt: "Faded car paint before paint correction detailing in Waterford Township, MI",
+    afterAlt: "Restored car paint after professional paint correction at Waterford Auto Shine",
     label: "Paint Correction",
   },
 ];
