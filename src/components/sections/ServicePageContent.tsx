@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight } from "@phosphor-icons/react";
+import { Phone, ArrowRight, CaretRight } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/siteConfig";
 import { Footer } from "@/components/layout/Footer";
 import Map from "@/components/sections/Map";
@@ -35,6 +35,36 @@ export default function ServicePageContent({
         style={{ backgroundColor: "var(--color-surface-dark)" }}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex items-center justify-center gap-1.5 text-sm"
+          >
+            <Link
+              href="/"
+              className="transition-colors"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}
+            >
+              Home
+            </Link>
+            <CaretRight size={12} style={{ color: "rgba(255,255,255,0.3)" }} aria-hidden="true" />
+            <Link
+              href="/services"
+              className="transition-colors"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}
+            >
+              Services
+            </Link>
+            <CaretRight size={12} style={{ color: "rgba(255,255,255,0.3)" }} aria-hidden="true" />
+            <span style={{ color: "rgba(255,255,255,0.8)" }}>
+              {service.name}
+            </span>
+          </nav>
+
           <motion.div {...fadeUp(0)}>
             <p
               className="font-mono text-xs uppercase tracking-[0.15em] mb-4"

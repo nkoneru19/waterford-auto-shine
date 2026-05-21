@@ -39,6 +39,26 @@ const cities = [
   "Farmington Hills",
 ];
 
+const serviceAreaSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  name: siteConfig.name,
+  url: "https://waterfordautoshine.com",
+  telephone: siteConfig.phone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.state,
+    postalCode: siteConfig.address.zip,
+    addressCountry: "US",
+  },
+  areaServed: cities.map((city) => ({
+    "@type": "City",
+    name: `${city}, MI`,
+  })),
+};
+
 export default function ServiceAreaPage() {
   return (
     <main>
@@ -130,5 +150,9 @@ export default function ServiceAreaPage() {
         </div>
       </section>
     </main>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaSchema) }}
+    />
   );
 }

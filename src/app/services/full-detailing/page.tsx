@@ -46,6 +46,16 @@ const serviceSchema = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://waterfordautoshine.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://waterfordautoshine.com/services" },
+    { "@type": "ListItem", position: 3, name: "Complete Detail", item: "https://waterfordautoshine.com/services/full-detailing" },
+  ],
+};
+
 export default function FullDetailingPage() {
   return (
     <>
@@ -53,6 +63,10 @@ export default function FullDetailingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>
   );
