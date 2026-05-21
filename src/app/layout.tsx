@@ -77,6 +77,75 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const serviceSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Exterior Detail",
+      provider: {
+        "@type": "AutoRepair",
+        name: siteConfig.name,
+      },
+      description:
+        "Professional hand wash and dry, door jambs, rims and tires, tire shine, and hand wax for a showroom-quality finish.",
+      offers: {
+        "@type": "AggregateOffer",
+        lowPrice: "75",
+        highPrice: "125",
+        priceCurrency: "USD",
+        offerCount: 3,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Waterford Township, MI",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Interior Detail",
+      provider: {
+        "@type": "AutoRepair",
+        name: siteConfig.name,
+      },
+      description:
+        "Full interior cleaning including vacuum, steam clean seats, leather cleaner and conditioner, carpet shampoo and extraction, headliner, and windows.",
+      offers: {
+        "@type": "AggregateOffer",
+        lowPrice: "200",
+        highPrice: "275",
+        priceCurrency: "USD",
+        offerCount: 3,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Waterford Township, MI",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Complete Detail",
+      provider: {
+        "@type": "AutoRepair",
+        name: siteConfig.name,
+      },
+      description:
+        "Our most thorough package combining full interior and exterior detail, plus clay bar treatment, sealant application, compound and polish, and smoke removal.",
+      offers: {
+        "@type": "AggregateOffer",
+        lowPrice: "325",
+        highPrice: "375",
+        priceCurrency: "USD",
+        offerCount: 3,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Waterford Township, MI",
+      },
+    },
+  ];
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -140,6 +209,15 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        {serviceSchemas.map((schema, i) => (
+          <script
+            key={`service-schema-${i}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
       </body>
     </html>
   );

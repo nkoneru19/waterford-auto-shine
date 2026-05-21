@@ -5,6 +5,7 @@ export const siteConfig = {
     "Professional hand wash and detailing services in Waterford Township, MI. Cars, trucks, and SUVs.",
   phone: "(248) 618-8999",
   phoneHref: "tel:+12486188999",
+  email: "Waterfordautoshine@gmail.com",
   address: {
     street: "3496 Pontiac Lake Rd",
     city: "Waterford Township",

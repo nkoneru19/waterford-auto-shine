@@ -208,6 +208,21 @@ export function Footer() {
                   {siteConfig.phone}
                 </a>
               </p>
+              <p>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="transition-colors"
+                  style={{
+                    color: "var(--color-text-muted)",
+                    transitionDuration: "200ms",
+                    transitionTimingFunction: "var(--ease-out-quart)",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-text-inverse)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
+                >
+                  {siteConfig.email}
+                </a>
+              </p>
               <div>
                 <p>Mon&ndash;Sat: {siteConfig.hours.weekday}</p>
                 <p>Sunday: {siteConfig.hours.sunday}</p>
