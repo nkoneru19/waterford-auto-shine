@@ -61,6 +61,7 @@ const serviceAreaSchema = {
 
 export default function ServiceAreaPage() {
   return (
+    <>
     <main>
       <section
         className="w-full"
@@ -154,5 +155,6 @@ export default function ServiceAreaPage() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaSchema) }}
     />
+    </>
   );
 }
