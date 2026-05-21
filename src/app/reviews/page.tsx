@@ -57,6 +57,55 @@ const reviewSchema = {
       reviewBody:
         "John and his crew went above and beyond. Quality work, making my car look like the day I bought it.",
     },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Sarah M." },
+      reviewBody:
+        "Great car wash and very friendly staff. Very eager to make customers happy. I won't go anywhere else.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Jennifer L." },
+      reviewBody:
+        "Had my SUV detailed before a road trip. Interior was spotless, exterior was mirror-finish. The hand wash makes all the difference.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Chris T." },
+      reviewBody:
+        "Brought my truck in absolutely covered in mud. They brought it back to life. Incredible work and fair prices.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Jason H." },
+      reviewBody:
+        "They took my F350 and turned it into a completely different vehicle. Workmanship speaks volumes!",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Mary B." },
+      reviewBody:
+        "Amazing job on the pet hair in my car. It looks brand new. Definitely recommend!",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "James Stanley" },
+      reviewBody:
+        "Waterford Auto Shine made our used car look like new again. We will definitely be back!",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Tom W." },
+      reviewBody:
+        "Best detailing in Waterford Township. My car hasn't looked this good since I drove it off the lot.",
+    },
   ],
 };
 
