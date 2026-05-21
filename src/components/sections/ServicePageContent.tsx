@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { Footer } from "@/components/layout/Footer";
 import Map from "@/components/sections/Map";
 import type { ServiceData } from "@/lib/serviceData";
+import type { BlogPost } from "@/lib/blogData";
 
 const easeOutQuart = [0.25, 1, 0.5, 1] as const;
 
@@ -21,11 +22,13 @@ function fadeUp(delay: number) {
 interface ServicePageContentProps {
   service: ServiceData;
   otherServices: ServiceData[];
+  relatedPosts?: BlogPost[];
 }
 
 export default function ServicePageContent({
   service,
   otherServices,
+  relatedPosts,
 }: ServicePageContentProps) {
   return (
     <>
@@ -362,6 +365,77 @@ export default function ServicePageContent({
           </div>
         </div>
       </section>
+
+      {/* Related Blog Posts */}
+      {relatedPosts && relatedPosts.length > 0 && (
+        <section
+          className="py-16 sm:py-24"
+          style={{ backgroundColor: "var(--color-surface)" }}
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div {...fadeUp(0)}>
+              <h2
+                className="font-[var(--font-heading)] text-2xl font-bold mb-8"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                From the Blog
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {relatedPosts.map((post, i) => (
+                <motion.div key={post.slug} {...fadeUp(0.1 + i * 0.08)}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="block rounded-2xl p-6 sm:p-8 h-full transition-all duration-300"
+                    style={{
+                      backgroundColor: "var(--color-surface)",
+                      border: "1px solid var(--color-border)",
+                      boxShadow: "0 4px 16px oklch(0.1 0.02 250 / 0.04)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow =
+                        "0 8px 24px oklch(0.55 0.2 250 / 0.08)";
+                      e.currentTarget.style.borderColor =
+                        "oklch(0.55 0.2 250 / 0.3)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow =
+                        "0 4px 16px oklch(0.1 0.02 250 / 0.04)";
+                      e.currentTarget.style.borderColor = "var(--color-border)";
+                    }}
+                  >
+                    <p
+                      className="text-xs font-mono mb-3"
+                      style={{ color: "var(--color-text-muted)" }}
+                    >
+                      {post.readTime}
+                    </p>
+                    <h3
+                      className="font-[var(--font-heading)] text-lg font-bold mb-2"
+                      style={{ color: "var(--color-text-primary)" }}
+                    >
+                      {post.title}
+                    </h3>
+                    <p
+                      className="text-sm line-clamp-2"
+                      style={{ color: "var(--color-text-secondary)" }}
+                    >
+                      {post.description}
+                    </p>
+                    <span
+                      className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold"
+                      style={{ color: "var(--color-accent)" }}
+                    >
+                      Read more
+                      <ArrowRight size={14} weight="bold" />
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <Map />
       <Footer />

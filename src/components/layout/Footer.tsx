@@ -26,6 +26,7 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Reviews", href: "/reviews" },
   { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
   { label: "Service Area", href: "/service-area" },
 ];
 
