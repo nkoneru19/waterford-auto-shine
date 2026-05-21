@@ -196,6 +196,23 @@ export function Footer() {
               </p>
               <p>
                 <a
+                  href="https://share.google/EIQTY3AE0wAd1kuMQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors"
+                  style={{
+                    color: "var(--color-text-muted)",
+                    transitionDuration: "200ms",
+                    transitionTimingFunction: "var(--ease-out-quart)",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-text-inverse)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-text-muted)"; }}
+                >
+                  Google Reviews
+                </a>
+              </p>
+              <p>
+                <a
                   href={siteConfig.phoneHref}
                   className="transition-colors"
                   style={{
