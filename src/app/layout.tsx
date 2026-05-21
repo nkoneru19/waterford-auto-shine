@@ -77,24 +77,84 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const serviceProvider = {
+    "@type": "AutoRepair",
+    name: siteConfig.name,
+    url: BASE_URL,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.zip,
+      addressCountry: "US",
+    },
+  };
+
   const serviceSchemas = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Exterior Detail",
-      provider: {
-        "@type": "AutoRepair",
-        name: siteConfig.name,
+      serviceType: "Interior Auto Detailing",
+      name: "Interior Detail",
+      provider: serviceProvider,
+      description:
+        "Full interior cleaning including vacuum, plastics and vinyls, steam clean seats, leather cleaner and conditioner, carpet shampoo and extraction, headliner, and windows.",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Interior Detail — Sedan",
+          price: "200",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Interior Detail — Midsize + Trucks",
+          price: "225",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Interior Detail — Large SUV + Minivan",
+          price: "275",
+          priceCurrency: "USD",
+        },
+      ],
+      areaServed: {
+        "@type": "City",
+        name: "Waterford Township, MI",
       },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: "Exterior Auto Detailing",
+      name: "Exterior Detail",
+      provider: serviceProvider,
       description:
         "Professional hand wash and dry, door jambs, rims and tires, tire shine, and hand wax for a showroom-quality finish.",
-      offers: {
-        "@type": "AggregateOffer",
-        lowPrice: "75",
-        highPrice: "125",
-        priceCurrency: "USD",
-        offerCount: 3,
-      },
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Exterior Detail — Sedan",
+          price: "75",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Exterior Detail — Midsize + Trucks",
+          price: "100",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Exterior Detail — Large SUV + Minivan",
+          price: "125",
+          priceCurrency: "USD",
+        },
+      ],
       areaServed: {
         "@type": "City",
         name: "Waterford Township, MI",
@@ -103,42 +163,31 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Interior Detail",
-      provider: {
-        "@type": "AutoRepair",
-        name: siteConfig.name,
-      },
-      description:
-        "Full interior cleaning including vacuum, steam clean seats, leather cleaner and conditioner, carpet shampoo and extraction, headliner, and windows.",
-      offers: {
-        "@type": "AggregateOffer",
-        lowPrice: "200",
-        highPrice: "275",
-        priceCurrency: "USD",
-        offerCount: 3,
-      },
-      areaServed: {
-        "@type": "City",
-        name: "Waterford Township, MI",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
+      serviceType: "Complete Auto Detailing",
       name: "Complete Detail",
-      provider: {
-        "@type": "AutoRepair",
-        name: siteConfig.name,
-      },
+      provider: serviceProvider,
       description:
         "Our most thorough package combining full interior and exterior detail, plus clay bar treatment, sealant application, compound and polish, and smoke removal.",
-      offers: {
-        "@type": "AggregateOffer",
-        lowPrice: "325",
-        highPrice: "375",
-        priceCurrency: "USD",
-        offerCount: 3,
-      },
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Complete Detail — Sedan",
+          price: "325",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Complete Detail — Midsize",
+          price: "350",
+          priceCurrency: "USD",
+        },
+        {
+          "@type": "Offer",
+          name: "Complete Detail — Large",
+          price: "375",
+          priceCurrency: "USD",
+        },
+      ],
       areaServed: {
         "@type": "City",
         name: "Waterford Township, MI",
