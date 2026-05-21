@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ServicePageContent from "@/components/sections/ServicePageContent";
 import { getServiceBySlug, getOtherServices } from "@/lib/serviceData";
+import { getBlogBySlug } from "@/lib/blogData";
 
 const service = getServiceBySlug("exterior-detailing")!;
 const otherServices = getOtherServices("exterior-detailing");
@@ -56,10 +57,15 @@ const breadcrumbSchema = {
   ],
 };
 
+const relatedPosts = [
+  getBlogBySlug("hand-wash-vs-automatic-car-wash")!,
+  getBlogBySlug("how-often-should-you-detail-your-car")!,
+];
+
 export default function ExteriorDetailingPage() {
   return (
     <>
-      <ServicePageContent service={service} otherServices={otherServices} />
+      <ServicePageContent service={service} otherServices={otherServices} relatedPosts={relatedPosts} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

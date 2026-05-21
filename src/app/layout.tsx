@@ -249,6 +249,16 @@ export default function RootLayout({
       className={`${archivo.variable} ${figtree.variable} h-full`}
     >
       <body className="font-[family-name:var(--font-figtree)] antialiased min-h-full flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"
+          style={{
+            backgroundColor: "var(--color-accent)",
+            color: "var(--color-text-inverse)",
+          }}
+        >
+          Skip to main content
+        </a>
         <Header />
         {children}
         <StickyMobileCTA />
