@@ -125,12 +125,12 @@ export default function QuotePage() {
                 </div>
               ) : (
                 <>
-                  <p
+                  <h2
                     className="font-[var(--font-heading)] text-xl font-bold mb-6"
                     style={{ color: "var(--color-text-primary)" }}
                   >
                     Vehicle &amp; Service Details
-                  </p>
+                  </h2>
 
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <input type="hidden" name="_subject" value="New Quote Request — Waterford Auto Shine" />
@@ -301,12 +301,12 @@ export default function QuotePage() {
                   backgroundColor: "var(--color-surface)",
                 }}
               >
-                <p
+                <h2
                   className="font-[var(--font-heading)] text-lg font-bold mb-6"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   Contact Info
-                </p>
+                </h2>
 
                 <div className="space-y-5">
                   <a
@@ -380,12 +380,12 @@ export default function QuotePage() {
                   backgroundColor: "var(--color-surface)",
                 }}
               >
-                <p
+                <h2
                   className="font-[var(--font-heading)] text-lg font-bold mb-4"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   What to Expect
-                </p>
+                </h2>
                 <ul className="space-y-3">
                   {[
                     "We'll respond within a few hours",

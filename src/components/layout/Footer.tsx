@@ -33,7 +33,7 @@ const services = [
   { label: "Interior Detailing", href: "/services/interior-detailing" },
   { label: "Exterior Detailing", href: "/services/exterior-detailing" },
   { label: "Complete Detail", href: "/services/full-detailing" },
-  { label: "Paint Correction", href: "/services" },
+  { label: "Paint Correction", href: "/services/full-detailing" },
 ];
 
 const legalLinks = [

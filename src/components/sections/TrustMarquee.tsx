@@ -35,7 +35,9 @@ export default function TrustMarquee() {
     <section
       className="py-8 overflow-hidden border-y"
       style={{ borderColor: "var(--color-border)" }}
+      aria-label="Why choose Waterford Auto Shine"
     >
+      <h2 className="sr-only">Why Choose Waterford Auto Shine</h2>
       <div
         className="group flex gap-4 font-mono uppercase text-xs tracking-[0.15em]"
         style={{ color: "var(--color-text-muted)" }}
