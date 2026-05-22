@@ -59,7 +59,8 @@ const breadcrumbSchema = {
 
 const relatedPosts = [
   getBlogBySlug("interior-detailing-what-to-expect")!,
-  getBlogBySlug("how-often-should-you-detail-your-car")!,
+  getBlogBySlug("4-reasons-your-car-still-smells-after-cleaning")!,
+  getBlogBySlug("7-signs-your-car-needs-a-detail")!,
 ];
 
 export default function InteriorDetailingPage() {

@@ -59,7 +59,8 @@ const breadcrumbSchema = {
 
 const relatedPosts = [
   getBlogBySlug("hand-wash-vs-automatic-car-wash")!,
-  getBlogBySlug("how-often-should-you-detail-your-car")!,
+  getBlogBySlug("5-mistakes-that-ruin-your-cars-paint")!,
+  getBlogBySlug("5-ways-to-keep-your-car-clean-between-details")!,
 ];
 
 export default function ExteriorDetailingPage() {

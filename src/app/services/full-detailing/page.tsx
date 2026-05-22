@@ -58,8 +58,9 @@ const breadcrumbSchema = {
 };
 
 const relatedPosts = [
+  getBlogBySlug("michigan-winter-car-care-checklist")!,
+  getBlogBySlug("7-signs-your-car-needs-a-detail")!,
   getBlogBySlug("how-often-should-you-detail-your-car")!,
-  getBlogBySlug("interior-detailing-what-to-expect")!,
 ];
 
 export default function FullDetailingPage() {
