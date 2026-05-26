@@ -70,13 +70,13 @@ export function Header() {
             <Image
               src="/images/logo.png"
               alt={siteConfig.name}
-              width={44}
-              height={44}
-              className="h-10 w-auto object-contain"
+              width={56}
+              height={56}
+              className="h-10 w-auto object-contain md:h-14"
               priority
             />
             <span
-              className="font-bold text-lg"
+              className="font-bold text-lg md:text-2xl"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-accent)",
