@@ -229,7 +229,7 @@ export default function RootLayout({
       reviewCount: siteConfig.reviewCount.toString(),
       bestRating: "5",
     },
-    priceRange: "$125-$375",
+    priceRange: "$75-$375+",
     image: `${BASE_URL}/images/gallery-1.jpg`,
     sameAs: [siteConfig.social.facebook],
     areaServed: {

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   title:
     "Exterior Detailing Waterford MI | Hand Wash & Wax | Waterford Auto Shine",
   description:
-    "Professional exterior auto detailing in Waterford Township, MI. Hand wash, hand wax, tire shine, rim cleaning, and door jamb detail. From $125 to $175.",
+    "Professional exterior auto detailing in Waterford Township, MI. Hand wash, hand wax, tire shine, rim cleaning, and door jamb detail. From $75 to $125.",
   alternates: {
     canonical: "https://waterfordautoshine.com/services/exterior-detailing",
   },
   openGraph: {
     title: "Exterior Detailing Waterford MI | Hand Wash & Wax | Waterford Auto Shine",
     description:
-      "Professional exterior auto detailing in Waterford Township, MI. Hand wash, hand wax, tire shine, rim cleaning, and door jamb detail. From $125 to $175.",
+      "Professional exterior auto detailing in Waterford Township, MI. Hand wash, hand wax, tire shine, rim cleaning, and door jamb detail. From $75 to $125.",
     url: "https://waterfordautoshine.com/services/exterior-detailing",
   },
 };
@@ -41,8 +41,8 @@ const serviceSchema = {
   areaServed: "Waterford Township, MI",
   offers: {
     "@type": "AggregateOffer",
-    lowPrice: "125",
-    highPrice: "175",
+    lowPrice: "75",
+    highPrice: "125",
     priceCurrency: "USD",
   },
 };

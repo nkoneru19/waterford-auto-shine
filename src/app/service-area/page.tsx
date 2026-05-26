@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, Envelope } from "@phosphor-icons/react/dist/ssr";
 import { siteConfig } from "@/lib/siteConfig";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title:
@@ -155,6 +156,7 @@ export default function ServiceAreaPage() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAreaSchema) }}
     />
+    <Footer />
     </>
   );
 }
