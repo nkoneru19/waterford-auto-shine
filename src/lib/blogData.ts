@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "The Short Answer",
-        body: "For most drivers in Michigan, a full interior detail every 3 to 4 months and an exterior detail every 4 to 6 weeks keeps your car protected and looking sharp. If you have kids, pets, or eat in your car, bump that interior schedule up to every 2 months.",
+        body: "For most drivers in Michigan, a full interior detail every 6 to 9 months and an exterior detail every 3 to 6 months keeps your car protected and looking sharp. If you have kids, pets, or eat in your car, bump that interior schedule up to every 4 to 5 months.",
       },
       {
         heading: "Why Interior Detailing Matters More Than You Think",
@@ -178,7 +178,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "7. You Can't Remember the Last Time",
-        body: "If you have to think about it, it's been too long. Most cars in Michigan need an interior detail every 3 to 4 months and exterior protection every 4 to 6 weeks. If the last detail was more than 6 months ago, there's damage accumulating that you can't see yet.",
+        body: "If you have to think about it, it's been too long. Most cars in Michigan need an interior detail every 6 to 9 months and exterior protection every 3 to 6 months. If the last detail was more than a year ago, there's damage accumulating that you can't see yet.",
       },
     ],
   },
