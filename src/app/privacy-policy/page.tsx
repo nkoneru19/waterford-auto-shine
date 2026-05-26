@@ -107,8 +107,26 @@ export default function PrivacyPolicyPage() {
             style={{ color: "var(--color-primary)" }}
           >
             {siteConfig.phone}
+          </a>{" "}
+          or{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="underline"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {siteConfig.email}
           </a>
           .
+        </p>
+
+        <h2
+          className="text-xl font-semibold pt-4"
+          style={{ color: "var(--color-text-primary)" }}
+        >
+          Governing Law
+        </h2>
+        <p>
+          This Privacy Policy is governed by the laws of the State of Michigan, without regard to its conflict of law provisions.
         </p>
 
         <h2

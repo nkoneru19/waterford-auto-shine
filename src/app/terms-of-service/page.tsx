@@ -58,7 +58,17 @@ export default function TermsOfServicePage() {
           Appointments &amp; Cancellations
         </h2>
         <p>
-          Appointments can be scheduled by phone or through our website. We appreciate advance notice if you need to cancel or reschedule. We reserve the right to charge a fee for no-shows or late cancellations.
+          Appointments can be scheduled by phone or through our website. We appreciate advance notice if you need to cancel or reschedule.
+        </p>
+
+        <h2
+          className="text-xl font-semibold pt-4"
+          style={{ color: "var(--color-text-primary)" }}
+        >
+          Payment
+        </h2>
+        <p>
+          Payment is due at the time of service. We accept cash, credit cards, and other methods posted at our location. Prices shown on our website are starting rates and may vary based on vehicle size, condition, and any additional services requested.
         </p>
 
         <h2
@@ -87,7 +97,7 @@ export default function TermsOfServicePage() {
           className="text-xl font-semibold pt-4"
           style={{ color: "var(--color-text-primary)" }}
         >
-          Satisfaction
+          Satisfaction Guarantee
         </h2>
         <p>
           Your satisfaction is our priority. If you are not satisfied with our services, please contact us within 48 hours at{" "}
@@ -98,7 +108,25 @@ export default function TermsOfServicePage() {
           >
             {siteConfig.phone}
           </a>{" "}
-          and we will work with you to make it right.
+          or{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="underline"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {siteConfig.email}
+          </a>{" "}
+          and we will re-perform the unsatisfactory portion of the service at no additional charge.
+        </p>
+
+        <h2
+          className="text-xl font-semibold pt-4"
+          style={{ color: "var(--color-text-primary)" }}
+        >
+          Governing Law
+        </h2>
+        <p>
+          These Terms of Service are governed by the laws of the State of Michigan. Any disputes arising under these terms shall be resolved in the courts of Oakland County, Michigan.
         </p>
 
         <h2

@@ -34,6 +34,10 @@ export default function AccessibilityPage() {
         style={{ color: "var(--color-text-secondary)" }}
       >
         <p>
+          <strong>Last Updated:</strong> May 26, 2026
+        </p>
+
+        <p>
           {siteConfig.name} is committed to ensuring that our website is accessible to everyone, including people with disabilities. We strive to provide an inclusive digital experience for all visitors.
         </p>
 
