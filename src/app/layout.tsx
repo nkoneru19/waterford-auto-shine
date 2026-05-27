@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { siteConfig } from "@/lib/siteConfig";
 
 const GA_ID = "G-609F8R3ENC";
@@ -265,6 +266,7 @@ export default function RootLayout({
         <Header />
         {children}
         <StickyMobileCTA />
+        <CookieBanner />
 
         {/* Google Analytics */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

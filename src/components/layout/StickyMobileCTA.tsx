@@ -22,6 +22,7 @@ export function StickyMobileCTA() {
         {/* Call */}
         <a
           href={siteConfig.phoneHref}
+          aria-label={`Call us at ${siteConfig.phone}`}
           className="flex flex-col items-center justify-center gap-1 transition-colors"
           style={{
             color: "var(--color-text-secondary)",
@@ -55,6 +56,7 @@ export function StickyMobileCTA() {
           href={siteConfig.googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Get directions (opens in new tab)"
           className="flex flex-col items-center justify-center gap-1 transition-colors"
           style={{
             color: "var(--color-text-secondary)",

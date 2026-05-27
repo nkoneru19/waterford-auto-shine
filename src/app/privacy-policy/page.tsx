@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
         style={{ color: "var(--color-text-secondary)" }}
       >
         <p>
-          <strong>Last Updated:</strong> May 19, 2026
+          <strong>Last Updated:</strong> May 27, 2026
         </p>
 
         <p>
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
             <strong>Usage Data:</strong> Information about how you interact with our website, including pages visited, time spent, and referring sources.
           </li>
           <li>
-            <strong>Cookies:</strong> We may use cookies and similar technologies to improve your browsing experience and analyze website traffic.
+            <strong>Cookies &amp; Analytics:</strong> We use Google Analytics to collect anonymous data about how visitors use our website (pages visited, time on site, traffic sources). Google Analytics uses cookies to track this information. No personally identifiable information is collected through these cookies.
           </li>
         </ul>
 
@@ -72,6 +72,29 @@ export default function PrivacyPolicyPage() {
           <li>To improve our website and customer experience</li>
           <li>To send occasional updates or promotions (only with your consent)</li>
         </ul>
+
+        <h2
+          className="text-xl font-semibold pt-4"
+          style={{ color: "var(--color-text-primary)" }}
+        >
+          Google Analytics &amp; Cookies
+        </h2>
+        <p>
+          This website uses Google Analytics, a web analytics service provided by Google LLC. Google Analytics uses cookies to help us analyze how users interact with our site. The data collected (such as your IP address, browser type, and pages visited) is transmitted to and stored by Google on servers in the United States.
+        </p>
+        <p>
+          You can opt out of Google Analytics tracking at any time by installing the{" "}
+          <a
+            href="https://tools.google.com/dlpage/gaoptout"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+            style={{ color: "var(--color-accent)" }}
+          >
+            Google Analytics Opt-out Browser Add-on
+          </a>
+          . You may also disable cookies in your browser settings; however, this may affect the functionality of our website.
+        </p>
 
         <h2
           className="text-xl font-semibold pt-4"

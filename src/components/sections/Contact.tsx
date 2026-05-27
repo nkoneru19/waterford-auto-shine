@@ -125,8 +125,8 @@ export default function Contact() {
                 <input type="hidden" name="_template" value="table" />
                 <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} />
 
-                <Input label="Name" name="name" type="text" placeholder="Your full name" />
-                <Input label="Phone" name="phone" type="tel" placeholder="(248) 555-1234" />
+                <Input label="Name" name="name" type="text" placeholder="Your full name" required />
+                <Input label="Phone" name="phone" type="tel" placeholder="(248) 555-1234" required />
                 <Input label="Email" name="email" type="email" placeholder="you@email.com" />
 
                 <Select
@@ -193,21 +193,25 @@ function Input({
   name,
   type,
   placeholder,
+  required,
 }: {
   label: string;
   name: string;
   type: string;
   placeholder?: string;
+  required?: boolean;
 }) {
   return (
     <div>
       <label className="mb-1.5 block text-sm font-medium text-[var(--color-text-primary)]">
-        {label}
+        {label}{required && <span style={{ color: "var(--color-accent)" }}> *</span>}
       </label>
       <input
         type={type}
         name={name}
         placeholder={placeholder}
+        required={required}
+        aria-required={required}
         className="w-full rounded-lg border border-[var(--color-text-muted)]/30 bg-white px-4 py-3 text-[var(--color-text-primary)] transition-all duration-200 outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-glow)]"
       />
     </div>
