@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Figtree } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { siteConfig } from "@/lib/siteConfig";
+
+const GA_ID = "G-609F8R3ENC";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -262,6 +265,16 @@ export default function RootLayout({
         <Header />
         {children}
         <StickyMobileCTA />
+
+        {/* Google Analytics */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
