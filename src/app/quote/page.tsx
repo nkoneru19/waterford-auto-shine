@@ -264,6 +264,10 @@ export default function QuotePage() {
                       </p>
                     )}
 
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
+                      By submitting this form, you consent to receive text messages from Waterford Auto Shine regarding your inquiry. Reply STOP to opt out. Message &amp; data rates may apply.
+                    </p>
+
                     <button
                       type="submit"
                       disabled={status === "sending"}
