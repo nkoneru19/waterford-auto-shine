@@ -122,7 +122,7 @@ export default function Hero() {
         <motion.div
           {...fadeUp(0.15)}
           id="hero-form"
-          className="hidden lg:block rounded-2xl p-6 sm:p-8"
+          className="hidden lg:block rounded-2xl p-5 sm:p-6"
           style={{
             border: "1px solid var(--color-border)",
             backgroundColor: "var(--color-surface)",
@@ -154,7 +154,7 @@ export default function Hero() {
               </button>
             </div>
           ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-3" onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="New Quote Request — Waterford Auto Shine" />
               <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} />
@@ -169,7 +169,7 @@ export default function Hero() {
                   name="name"
                   required
                   placeholder="Your full name"
-                  className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                   style={inputStyle}
                   {...focusHandlers}
                 />
@@ -185,7 +185,7 @@ export default function Hero() {
                   name="phone"
                   required
                   placeholder="(248) 555-1234"
-                  className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                   style={inputStyle}
                   {...focusHandlers}
                 />
@@ -199,7 +199,7 @@ export default function Hero() {
                 <select
                   name="service"
                   required
-                  className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                   style={inputStyle}
                   {...focusHandlers}
                 >
@@ -225,7 +225,7 @@ export default function Hero() {
                     name="year"
                     required
                     placeholder="Year"
-                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                    className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                     style={inputStyle}
                     {...focusHandlers}
                   />
@@ -234,7 +234,7 @@ export default function Hero() {
                     name="make"
                     required
                     placeholder="Make"
-                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                    className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                     style={inputStyle}
                     {...focusHandlers}
                   />
@@ -243,7 +243,7 @@ export default function Hero() {
                     name="model"
                     required
                     placeholder="Model"
-                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors"
+                    className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors"
                     style={inputStyle}
                     {...focusHandlers}
                   />
@@ -259,7 +259,7 @@ export default function Hero() {
                   name="message"
                   rows={3}
                   placeholder="Messages or special requests"
-                  className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition-colors resize-none"
+                  className="w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors resize-none"
                   style={inputStyle}
                   {...focusHandlers}
                 />
