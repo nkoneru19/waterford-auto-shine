@@ -129,7 +129,7 @@ export default function ServicePageContent({
             className="font-[var(--font-heading)] text-2xl font-bold mb-5"
             style={{ color: "var(--color-text-primary)" }}
           >
-            What is a{service.name === "Interior Detail" ? "n" : ""} {service.name} and what does it cost?
+            What is a{/^[aeiou]/i.test(service.name) ? "n" : ""} {service.name} and what does it cost?
           </h2>
           <p
             className="text-lg"
