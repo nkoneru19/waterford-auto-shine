@@ -70,3 +70,7 @@ Still needs Joey / the client:
 - Per-service durations (site only says "2-4 hours" generally).
 - /service-area copy is still ~250 words of city list; needs real per-area detail to reach 500.
 - Optional: a "How much does car detailing cost in Oakland County" guide page (SXO gap).
+
+**Scope decision (Joey, Sep 4 2026):** this is a $600 basic site. The remaining SEO open
+items above are NOT to be worked on unless the client pays for more. Only routine change
+requests from Joey. The apex -> www redirect was switched to 308 the same night.
