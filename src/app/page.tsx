@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import GoogleReviews from "@/components/sections/GoogleReviews";
 import TrustMarquee from "@/components/sections/TrustMarquee";
 import Services from "@/components/sections/Services";
+import BeforeAfter from "@/components/sections/BeforeAfter";
 import Comparison from "@/components/sections/Comparison";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
@@ -19,6 +20,7 @@ export default function Home() {
       <GoogleReviews />
       <TrustMarquee />
       <Services />
+      <BeforeAfter />
       <Comparison />
       <Process />
       <Testimonials />
