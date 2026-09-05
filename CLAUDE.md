@@ -35,3 +35,20 @@ Next.js + Tailwind CSS. Key paths:
 - `src/app/reviews/` — Reviews page
 - `src/app/quote/` — Quote page
 - `src/app/service-areas/` — Service areas page
+
+## Deploy check
+Unlinked folder; the project lives in Nikhil's Vercel team. From this folder:
+`python3 ../tools/qa/deploy.py --scope nikhil-5479s-projects` (lesson 119).
+
+## Before/After slider (Sep 4 2026)
+- `src/components/sections/BeforeAfter.tsx`, on the homepage right after Services
+  (section id `results`). Four angles of the black Kia Sorento Complete Detail:
+  Front, Side, Rear, Interior (driver footwell). Drag, touch, and arrow keys.
+- Images: `public/images/before-after/<angle>-before.webp` / `-after.webp`, all
+  4:3 at 1800x1350, webp q82. The slider is `aspect-[4/3]`; keep new pairs 4:3.
+- Originals live in `raw-media/before|after/` (gitignored, with a README that
+  maps each IMG number to its angle). Three afters were stored sideways with no
+  EXIF flag (IMG_1422/1424/1425) and were rotated 90 degrees clockwise.
+- Unused but ready: head-on front (IMG_1379/1419, after is shot further back)
+  and center console (IMG_1383/1425, framing differs). Add via the
+  `comparisons` array.
