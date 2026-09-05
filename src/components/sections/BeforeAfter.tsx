@@ -15,6 +15,16 @@ type Comparison = {
 
 const comparisons: Comparison[] = [
   {
+    id: "interior",
+    label: "Interior",
+    beforeSrc: "/images/before-after/interior-before.webp",
+    afterSrc: "/images/before-after/interior-after.webp",
+    beforeAlt:
+      "Driver footwell carpet full of dirt and debris before an interior detail at Waterford Auto Shine",
+    afterAlt:
+      "Driver footwell carpet shampooed and extracted clean after an interior detail at Waterford Auto Shine",
+  },
+  {
     id: "front",
     label: "Front",
     beforeSrc: "/images/before-after/front-before.webp",
@@ -23,16 +33,6 @@ const comparisons: Comparison[] = [
       "Black Kia Sorento covered in road dust before a Complete Detail at Waterford Auto Shine",
     afterAlt:
       "Black Kia Sorento with clean, glossy paint after a Complete Detail at Waterford Auto Shine in Waterford, MI",
-  },
-  {
-    id: "side",
-    label: "Side",
-    beforeSrc: "/images/before-after/side-before.webp",
-    afterSrc: "/images/before-after/side-after.webp",
-    beforeAlt:
-      "Side of a Kia Sorento with dirty doors and rocker panels before detailing in Waterford Township, MI",
-    afterAlt:
-      "Side of a Kia Sorento with spotless doors and shined tires after detailing in Waterford Township, MI",
   },
   {
     id: "rear",
@@ -45,14 +45,14 @@ const comparisons: Comparison[] = [
       "Rear of a Kia Sorento with a clean tailgate and clear rear window after an exterior detail",
   },
   {
-    id: "interior",
-    label: "Interior",
-    beforeSrc: "/images/before-after/interior-before.webp",
-    afterSrc: "/images/before-after/interior-after.webp",
+    id: "side",
+    label: "Side",
+    beforeSrc: "/images/before-after/side-before.webp",
+    afterSrc: "/images/before-after/side-after.webp",
     beforeAlt:
-      "Driver footwell carpet full of dirt and debris before an interior detail at Waterford Auto Shine",
+      "Side of a Kia Sorento with dirty doors and rocker panels before detailing in Waterford Township, MI",
     afterAlt:
-      "Driver footwell carpet shampooed and extracted clean after an interior detail at Waterford Auto Shine",
+      "Side of a Kia Sorento with spotless doors and shined tires after detailing in Waterford Township, MI",
   },
 ];
 
@@ -111,11 +111,11 @@ function CompareSlider({ item }: { item: Comparison }) {
       ref={containerRef}
       role="slider"
       tabIndex={0}
-      aria-label="Before and after comparison. Drag left to see the before, right to see the after."
+      aria-label="Before and after comparison. Drag right to reveal the after, left to reveal the before."
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={Math.round(position)}
-      aria-valuetext={`${Math.round(position)}% before`}
+      aria-valuetext={`${Math.round(position)}% after`}
       className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-ew-resize select-none touch-none outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-dark)]"
       style={{ boxShadow: "0 20px 40px oklch(0 0 0 / 0.3)" }}
       onPointerDown={handlePointerDown}
@@ -124,10 +124,10 @@ function CompareSlider({ item }: { item: Comparison }) {
       onPointerCancel={stopDragging}
       onKeyDown={handleKeyDown}
     >
-      {/* After (full background) */}
+      {/* Before (full background, seen to the right of the handle) */}
       <Image
-        src={item.afterSrc}
-        alt={item.afterAlt}
+        src={item.beforeSrc}
+        alt={item.beforeAlt}
         fill
         priority={false}
         className="object-cover"
@@ -135,14 +135,14 @@ function CompareSlider({ item }: { item: Comparison }) {
         draggable={false}
       />
 
-      {/* Before (clipped to the left of the handle) */}
+      {/* After (clipped to the left of the handle; grows as you drag right) */}
       <div
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
         <Image
-          src={item.beforeSrc}
-          alt={item.beforeAlt}
+          src={item.afterSrc}
+          alt={item.afterAlt}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 66vw, 850px"
@@ -189,15 +189,15 @@ function CompareSlider({ item }: { item: Comparison }) {
       {/* Labels */}
       <span
         className="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider pointer-events-none"
-        style={{ backgroundColor: "oklch(0 0 0 / 0.65)", color: "white" }}
-      >
-        Before
-      </span>
-      <span
-        className="absolute top-4 right-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider pointer-events-none"
         style={{ backgroundColor: "var(--color-accent)", color: "white" }}
       >
         After
+      </span>
+      <span
+        className="absolute top-4 right-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider pointer-events-none"
+        style={{ backgroundColor: "oklch(0 0 0 / 0.65)", color: "white" }}
+      >
+        Before
       </span>
     </div>
   );
@@ -234,7 +234,8 @@ export default function BeforeAfter() {
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
               This Kia Sorento came in for a Complete Detail. Drag the handle
-              to compare how it arrived with how it left.
+              to the right to see how it left, back to the left to see how it
+              arrived.
             </p>
 
             <div
@@ -251,17 +252,15 @@ export default function BeforeAfter() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActive(i)}
-                    className="text-left px-4 py-3 rounded-xl text-sm font-semibold transition-colors duration-200 flex-1 md:flex-none"
+                    className="text-center md:text-left px-4 py-3 rounded-xl text-sm font-bold transition-colors duration-200 flex-1 md:flex-none"
                     style={{
                       backgroundColor: isActive
-                        ? "rgba(255,255,255,0.08)"
-                        : "transparent",
-                      color: isActive
-                        ? "var(--color-text-inverse)"
-                        : "rgba(255,255,255,0.5)",
+                        ? "var(--color-accent)"
+                        : "rgba(255,255,255,0.12)",
+                      color: isActive ? "white" : "var(--color-text-inverse)",
                       border: isActive
-                        ? "1px solid rgba(255,255,255,0.14)"
-                        : "1px solid rgba(255,255,255,0.06)",
+                        ? "1px solid var(--color-accent)"
+                        : "1px solid rgba(255,255,255,0.28)",
                     }}
                   >
                     {comp.label}
