@@ -5,7 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { CookieBanner } from "@/components/layout/CookieBanner";
-import { siteConfig } from "@/lib/siteConfig";
+import { serviceAreaCities, siteConfig } from "@/lib/siteConfig";
 
 const GA_ID = "G-609F8R3ENC";
 
@@ -23,7 +23,7 @@ const figtree = Figtree({
   display: "swap",
 });
 
-const BASE_URL = "https://waterfordautoshine.com";
+const BASE_URL = "https://www.waterfordautoshine.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -81,21 +81,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const serviceProvider = {
-    "@type": "AutoRepair",
-    name: siteConfig.name,
-    url: BASE_URL,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      postalCode: siteConfig.address.zip,
-      addressCountry: "US",
-    },
-  };
+  const businessId = `${BASE_URL}/#business`;
+  const serviceProvider = { "@id": businessId };
+  const areaServed = serviceAreaCities.map((city) => ({
+    "@type": "City",
+    name: `${city}, MI`,
+  }));
 
   const serviceSchemas = [
     {
@@ -103,6 +94,7 @@ export default function RootLayout({
       "@type": "Service",
       serviceType: "Interior Auto Detailing",
       name: "Interior Detail",
+      url: `${BASE_URL}/services/interior-detailing`,
       provider: serviceProvider,
       description:
         "Full interior cleaning including vacuum, plastics and vinyls, steam clean seats, leather cleaner and conditioner, carpet shampoo and extraction, headliner, and windows.",
@@ -126,16 +118,14 @@ export default function RootLayout({
           priceCurrency: "USD",
         },
       ],
-      areaServed: {
-        "@type": "City",
-        name: "Waterford Township, MI",
-      },
+      areaServed,
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: "Exterior Auto Detailing",
       name: "Exterior Detail",
+      url: `${BASE_URL}/services/exterior-detailing`,
       provider: serviceProvider,
       description:
         "Professional hand wash and dry, door jambs, rims and tires, tire shine, and hand wax for a showroom-quality finish.",
@@ -143,32 +133,30 @@ export default function RootLayout({
         {
           "@type": "Offer",
           name: "Exterior Detail — Sedan",
-          price: "75",
+          price: "125",
           priceCurrency: "USD",
         },
         {
           "@type": "Offer",
           name: "Exterior Detail — Midsize + Trucks",
-          price: "100",
+          price: "150",
           priceCurrency: "USD",
         },
         {
           "@type": "Offer",
           name: "Exterior Detail — Large SUV + Minivan",
-          price: "125",
+          price: "175",
           priceCurrency: "USD",
         },
       ],
-      areaServed: {
-        "@type": "City",
-        name: "Waterford Township, MI",
-      },
+      areaServed,
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: "Complete Auto Detailing",
       name: "Complete Detail",
+      url: `${BASE_URL}/services/full-detailing`,
       provider: serviceProvider,
       description:
         "Our most thorough package combining full interior and exterior detail, plus clay bar treatment, sealant application, compound and polish, and smoke removal.",
@@ -192,16 +180,14 @@ export default function RootLayout({
           priceCurrency: "USD",
         },
       ],
-      areaServed: {
-        "@type": "City",
-        name: "Waterford Township, MI",
-      },
+      areaServed,
     },
   ];
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
+    "@type": "AutoWash",
+    "@id": businessId,
     name: siteConfig.name,
     description: siteConfig.description,
     url: BASE_URL,
@@ -216,8 +202,8 @@ export default function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 42.6615,
-      longitude: -83.3827,
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
     },
     openingHoursSpecification: [
       {
@@ -229,22 +215,23 @@ export default function RootLayout({
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: siteConfig.rating.toString(),
-      reviewCount: siteConfig.reviewCount.toString(),
-      bestRating: "5",
+      ratingValue: siteConfig.rating,
+      reviewCount: siteConfig.reviewCount,
+      bestRating: 5,
     },
-    priceRange: "$75-$375+",
+    priceRange: "$125-$375",
     image: `${BASE_URL}/images/gallery-1.jpg`,
-    sameAs: [siteConfig.social.facebook],
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 42.6615,
-        longitude: -83.3827,
-      },
-      geoRadius: "30000",
-    },
+    sameAs: [siteConfig.social.facebook, siteConfig.social.google],
+    areaServed,
+  };
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
+    name: siteConfig.name,
+    url: BASE_URL,
+    publisher: { "@id": businessId },
   };
 
   return (
@@ -282,6 +269,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
         {serviceSchemas.map((schema, i) => (
           <script

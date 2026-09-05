@@ -59,7 +59,7 @@ export default function FAQ() {
                 className="group border-b border-[var(--color-text-muted)]/20"
               >
                 <summary className="flex items-center justify-between py-5 cursor-pointer list-none font-[var(--font-heading)] text-lg font-semibold text-[var(--color-text-primary)] transition-colors duration-200 hover:text-[var(--color-accent)]">
-                  <span>{faq.question}</span>
+                  <h3 className="font-semibold">{faq.question}</h3>
                   <CaretDown
                     size={20}
                     weight="bold"

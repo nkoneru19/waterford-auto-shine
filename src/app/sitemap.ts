@@ -1,97 +1,35 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blogData";
 
-const BASE_URL = "https://waterfordautoshine.com";
+const BASE_URL = "https://www.waterfordautoshine.com";
+
+// Real last-content-change dates. Update the date when a page's copy changes;
+// a wall-clock timestamp makes every page look edited on every request.
+const staticPages: Array<[path: string, lastModified: string]> = [
+  ["", "2026-09-04"],
+  ["/services", "2026-05-19"],
+  ["/services/exterior-detailing", "2026-05-26"],
+  ["/services/interior-detailing", "2026-05-21"],
+  ["/services/full-detailing", "2026-05-21"],
+  ["/quote", "2026-05-27"],
+  ["/reviews", "2026-05-20"],
+  ["/faq", "2026-05-19"],
+  ["/service-area", "2026-05-26"],
+  ["/blog", "2026-05-26"],
+  ["/privacy-policy", "2026-05-27"],
+  ["/terms-of-service", "2026-05-26"],
+  ["/accessibility", "2026-05-26"],
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogEntries: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
+  return [
+    ...staticPages.map(([path, date]) => ({
+      url: `${BASE_URL}${path}`,
+      lastModified: new Date(date),
+    })),
     ...blogPosts.map((post) => ({
       url: `${BASE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
     })),
-  ];
-
-  return [
-    {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${BASE_URL}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/services/exterior-detailing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/services/interior-detailing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/services/full-detailing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/quote`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/reviews`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/faq`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${BASE_URL}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/terms-of-service`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/accessibility`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/service-area`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    ...blogEntries,
   ];
 }

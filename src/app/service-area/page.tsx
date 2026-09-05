@@ -1,50 +1,31 @@
 import type { Metadata } from "next";
 import { Phone, Envelope } from "@phosphor-icons/react/dist/ssr";
-import { siteConfig } from "@/lib/siteConfig";
+import { serviceAreaCities, siteConfig } from "@/lib/siteConfig";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title:
-    "Service Area | Auto Detailing Near You | Waterford Auto Shine | Waterford Township, MI",
+    "Service Area | Waterford Auto Shine | Waterford Township, MI",
   description:
-    "Waterford Auto Shine serves Waterford Township, Pontiac, Clarkston, White Lake, West Bloomfield, Bloomfield Hills, Auburn Hills, and surrounding Oakland County communities. Professional auto detailing near you.",
+    "Waterford Auto Shine details cars, trucks, SUVs, and minivans for drivers from Waterford Township, Pontiac, Clarkston, White Lake, and across Oakland County.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/service-area",
+    canonical: "https://www.waterfordautoshine.com/service-area",
   },
   openGraph: {
     title: "Service Area | Auto Detailing Near You | Waterford Auto Shine",
     description:
       "Waterford Auto Shine serves Waterford Township, Pontiac, Clarkston, White Lake, West Bloomfield, and surrounding Oakland County communities.",
-    url: "https://waterfordautoshine.com/service-area",
+    url: "https://www.waterfordautoshine.com/service-area",
   },
 };
 
-const cities = [
-  "Waterford Township",
-  "Pontiac",
-  "Clarkston",
-  "White Lake",
-  "West Bloomfield",
-  "Bloomfield Hills",
-  "Auburn Hills",
-  "Lake Orion",
-  "Commerce Township",
-  "Sylvan Lake",
-  "Keego Harbor",
-  "Drayton Plains",
-  "Union Lake",
-  "Highland",
-  "Oxford",
-  "Rochester Hills",
-  "Troy",
-  "Farmington Hills",
-];
+const cities = serviceAreaCities;
 
 const serviceAreaSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": "AutoWash",
   name: siteConfig.name,
-  url: "https://waterfordautoshine.com",
+  url: "https://www.waterfordautoshine.com",
   telephone: siteConfig.phone,
   address: {
     "@type": "PostalAddress",
@@ -89,8 +70,10 @@ export default function ServiceAreaPage() {
             style={{ color: "var(--color-text-secondary)" }}
           >
             We proudly serve Waterford Township and all surrounding communities
-            in Oakland County. Whether you&apos;re down the street or across the
-            county, we&apos;re here to make your vehicle shine.
+            in Oakland County. Every detail is done at our shop at 3496 Pontiac
+            Lake Rd, Monday through Saturday 9 AM to 5 PM; we do not offer mobile
+            detailing, so drivers from the towns below bring their vehicle to us
+            and pick it up the same day.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

@@ -22,7 +22,7 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 md:bottom-6 md:left-6 md:right-auto md:max-w-sm"
+      className="fixed bottom-[calc(56px+env(safe-area-inset-bottom))] left-0 right-0 z-50 md:bottom-6 md:left-6 md:right-auto md:max-w-sm"
     >
       <div
         className="flex flex-col gap-3 px-5 py-4 md:rounded-2xl shadow-xl"

@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title:
     "FAQ | Auto Detailing Questions | Waterford Auto Shine | Waterford Township, MI",
   description:
-    "Frequently asked questions about auto detailing at Waterford Auto Shine in Waterford Township, MI. Learn about our services, pricing, scheduling, and what to expect.",
+    "Answers to common questions about auto detailing at Waterford Auto Shine in Waterford Township, MI: services, pricing, timing, and what to expect.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/faq",
+    canonical: "https://www.waterfordautoshine.com/faq",
   },
   openGraph: {
     title: "FAQ | Auto Detailing Questions | Waterford Auto Shine",
     description:
       "Frequently asked questions about auto detailing at Waterford Auto Shine in Waterford Township, MI.",
-    url: "https://waterfordautoshine.com/faq",
+    url: "https://www.waterfordautoshine.com/faq",
   },
 };
 

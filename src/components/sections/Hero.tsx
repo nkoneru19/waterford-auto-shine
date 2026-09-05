@@ -77,8 +77,8 @@ export default function Hero() {
           </motion.p>
 
           {/* Headline */}
-          <motion.h1
-            {...fadeUp(0)}
+          {/* The H1 is the LCP element: paint it immediately, never behind a JS fade */}
+          <h1
             className="font-[var(--font-heading)] font-bold tracking-tight leading-[1.05] text-center lg:text-left"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "var(--color-text-primary)" }}
           >
@@ -88,7 +88,7 @@ export default function Hero() {
             <span className="lg:hidden"> Hand Wash &amp;<br />Detail Shop</span>
             {/* Desktop: original layout */}
             <span className="hidden lg:inline"> Hand<br />Wash &amp; Detail Shop</span>
-          </motion.h1>
+          </h1>
 
           {/* Body */}
           <motion.p

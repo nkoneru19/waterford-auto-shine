@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "What types of vehicles do you detail?",
     answer:
-      "We detail sedans, trucks, SUVs, and minivans. Exterior details range from $75 to $125, interior details from $200 to $275, and complete details from $325 to $375, depending on vehicle size.",
+      "We detail sedans, trucks, SUVs, and minivans. Exterior details range from $125 to $175, interior details from $200 to $275, and complete details from $325 to $375, depending on vehicle size.",
   },
   {
     question: "How often should I get my vehicle detailed?",
@@ -127,7 +127,7 @@ export default function FAQPageContent() {
                   className="group border-b border-[var(--color-text-muted)]/20"
                 >
                   <summary className="flex items-center justify-between py-5 cursor-pointer list-none font-[var(--font-heading)] text-lg font-semibold text-[var(--color-text-primary)] transition-colors duration-200 hover:text-[var(--color-accent)]">
-                    <span>{faq.question}</span>
+                    <h3 className="font-semibold">{faq.question}</h3>
                     <CaretDown
                       size={20}
                       weight="bold"

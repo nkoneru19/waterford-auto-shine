@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     slug: "how-often-should-you-detail-your-car",
     title: "How Often Should You Detail Your Car?",
     description:
-      "Most people wait too long between details. Here's a simple guide to how often your car actually needs professional attention based on how you drive and where you park.",
+      "Most people wait too long between details. A simple guide to how often your car needs professional attention based on how you drive and where you park.",
     date: "2026-05-15",
     readTime: "4 min read",
     relatedServices: [
@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
     slug: "michigan-winter-car-care-checklist",
     title: "6 Things to Do Before and After a Michigan Winter",
     description:
-      "Michigan winters destroy cars. Road salt, freezing temps, and slush attack paint, interiors, and undercarriages for 5 straight months. Here's how to limit the damage.",
+      "Michigan winters destroy cars. Road salt, freezing temps, and slush attack paint and interiors for five straight months. Here's how to limit the damage.",
     date: "2026-05-12",
     readTime: "5 min read",
     relatedServices: [

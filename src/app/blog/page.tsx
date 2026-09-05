@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Expert auto detailing tips, guides, and advice from Waterford Auto Shine. Learn how to keep your car looking its best between professional details.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/blog",
+    canonical: "https://www.waterfordautoshine.com/blog",
   },
   openGraph: {
     title: "Car Care Tips & Detailing Blog | Waterford Auto Shine",
     description:
       "Expert auto detailing tips, guides, and advice from Waterford Auto Shine.",
-    url: "https://waterfordautoshine.com/blog",
+    url: "https://www.waterfordautoshine.com/blog",
   },
 };
 

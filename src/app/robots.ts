@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://waterfordautoshine.com/sitemap.xml",
+    sitemap: "https://www.waterfordautoshine.com/sitemap.xml",
   };
 }

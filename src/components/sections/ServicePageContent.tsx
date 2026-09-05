@@ -119,6 +119,27 @@ export default function ServicePageContent({
         </div>
       </section>
 
+      {/* Plain-language summary: the one paragraph that answers what, price, what is included, timing */}
+      <section
+        className="py-12 sm:py-16"
+        style={{ backgroundColor: "var(--color-surface-secondary)" }}
+      >
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2
+            className="font-[var(--font-heading)] text-2xl font-bold mb-5"
+            style={{ color: "var(--color-text-primary)" }}
+          >
+            What is a{service.name === "Interior Detail" ? "n" : ""} {service.name} and what does it cost?
+          </h2>
+          <p
+            className="text-lg"
+            style={{ lineHeight: 1.75, color: "var(--color-text-secondary)" }}
+          >
+            {service.passage}
+          </p>
+        </div>
+      </section>
+
       {/* What's Included + Pricing + CTA */}
       <section
         className="py-16 sm:py-24"

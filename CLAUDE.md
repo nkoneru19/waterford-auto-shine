@@ -13,7 +13,7 @@
 ## Services & Pricing
 - **Interior Detail:** Sedan $200 / Midsize+Trucks $225 / Large SUV+Minivan $275
   - Vacuum, Plastics/Vinyls, Steam Clean Seats, Leather Cleaner/Conditioner, Carpet Shampoo+Extraction, Headliner, Windows
-- **Exterior Detail:** Sedan $75 / Midsize+Trucks $100 / Large SUV+Minivan $125
+- **Exterior Detail:** Sedan $125 / Midsize+Trucks $150 / Large SUV+Minivan $175 (raised May 18 2026 from 75/100/125)
   - Hand Wash+Dry, Door Jambs, Rims/Tires, Tire Shine, Hand Wax
 - **Complete Detail:** Sedan $325 / Midsize $350 / Large $375+
   - Everything in Interior and Exterior, plus: Clay Bar Treatment, Sealant Application, Compound/Polish, Smoke Removal
@@ -52,3 +52,21 @@ Unlinked folder; the project lives in Nikhil's Vercel team. From this folder:
 - Unused but ready: head-on front (IMG_1379/1419, after is shot further back)
   and center console (IMG_1383/1425, framing differs). Add via the
   `comparisons` array.
+
+## SEO/GEO open items (audit Sep 4 2026, score 62/100 before fixes)
+Fixed in the audit round: www as the single host (canonicals, sitemap, robots, OG, schema),
+security headers, AutoWash type + @id-linked schema + WebSite node, real sitemap dates,
+exterior price $125/$150/$175 everywhere, 48px favicon (was 1.4 MB), hero H1 no longer JS-gated,
+service H1s carry service + city, 134-167 word passage on each service page, cookie banner
+above the sticky call bar, FAQ questions are h3s, Lisa P. review in schema, Google link in sameAs.
+Still needs Joey / the client:
+- Vercel: apex -> www redirect is a 307; switch it to 308 in the project's Domains settings
+  (Nikhil's team, dashboard only).
+- Exact GBP map pin (geo is an OpenStreetMap street-address geocode, 42.653963 / -83.35599;
+  the old value was 2 km off).
+- Owner name + years in business for an About block and blog bylines (reviews say "John").
+- Real photos for the inner pages: storefront, bays, team, and 3-5 before/after pairs per
+  service page (only the homepage slider has real work photos).
+- Per-service durations (site only says "2-4 hours" generally).
+- /service-area copy is still ~250 words of city list; needs real per-area detail to reach 500.
+- Optional: a "How much does car detailing cost in Oakland County" guide page (SXO gap).

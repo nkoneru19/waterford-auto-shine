@@ -8,25 +8,25 @@ export const metadata: Metadata = {
   description:
     "See what our customers are saying about Waterford Auto Shine. 4.8 stars from 45+ Google Reviews. Professional auto detailing in Waterford Township, MI.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/reviews",
+    canonical: "https://www.waterfordautoshine.com/reviews",
   },
   openGraph: {
     title: "Customer Reviews | Waterford Auto Shine",
     description:
       "See what our customers are saying about Waterford Auto Shine. 4.8 stars from 45+ Google Reviews. Professional auto detailing in Waterford Township, MI.",
-    url: "https://waterfordautoshine.com/reviews",
+    url: "https://www.waterfordautoshine.com/reviews",
   },
 };
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": "AutoWash",
   name: siteConfig.name,
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: siteConfig.rating.toString(),
-    reviewCount: siteConfig.reviewCount.toString(),
-    bestRating: "5",
+    ratingValue: siteConfig.rating,
+    reviewCount: siteConfig.reviewCount,
+    bestRating: 5,
   },
   review: [
     {
@@ -105,6 +105,13 @@ const reviewSchema = {
       author: { "@type": "Person", name: "Tom W." },
       reviewBody:
         "Best detailing in Waterford Township. My car hasn't looked this good since I drove it off the lot.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Lisa P." },
+      reviewBody:
+        "Fast, affordable, and the results speak for themselves. Five stars all the way.",
     },
   ],
 };

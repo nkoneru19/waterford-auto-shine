@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Privacy policy for Waterford Auto Shine in Waterford Township, MI. Learn how we collect, use, and protect your personal information.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/privacy-policy",
+    canonical: "https://www.waterfordautoshine.com/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | Waterford Auto Shine",
     description:
       "Privacy policy for Waterford Auto Shine in Waterford Township, MI. Learn how we collect, use, and protect your personal information.",
-    url: "https://waterfordautoshine.com/privacy-policy",
+    url: "https://www.waterfordautoshine.com/privacy-policy",
   },
 };
 

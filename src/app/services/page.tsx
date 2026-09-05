@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Professional exterior detailing, interior detailing, and full detail packages in Waterford Township, MI. Premium hand wash and auto detailing for cars, trucks, and SUVs.",
   alternates: {
-    canonical: "https://waterfordautoshine.com/services",
+    canonical: "https://www.waterfordautoshine.com/services",
   },
   openGraph: {
     title: "Auto Detailing Services | Waterford Auto Shine",
     description:
       "Professional exterior detailing, interior detailing, and full detail packages in Waterford Township, MI.",
-    url: "https://waterfordautoshine.com/services",
+    url: "https://www.waterfordautoshine.com/services",
   },
 };
 

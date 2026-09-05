@@ -21,15 +21,15 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} | Waterford Auto Shine Blog`,
+    title: `${post.title} | Waterford Auto Shine`,
     description: post.description,
     alternates: {
-      canonical: `https://waterfordautoshine.com/blog/${post.slug}`,
+      canonical: `https://www.waterfordautoshine.com/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://waterfordautoshine.com/blog/${post.slug}`,
+      url: `https://www.waterfordautoshine.com/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
     },
@@ -58,14 +58,19 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    url: `https://www.waterfordautoshine.com/blog/${post.slug}`,
+    mainEntityOfPage: `https://www.waterfordautoshine.com/blog/${post.slug}`,
     datePublished: post.date,
-    author: {
-      "@type": "Organization",
-      name: "Waterford Auto Shine",
-    },
+    dateModified: post.date,
+    author: { "@id": "https://www.waterfordautoshine.com/#business" },
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.waterfordautoshine.com/#business",
       name: "Waterford Auto Shine",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.waterfordautoshine.com/images/logo.png",
+      },
     },
   };
 
@@ -77,19 +82,19 @@ export default async function BlogPostPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://waterfordautoshine.com",
+        item: "https://www.waterfordautoshine.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://waterfordautoshine.com/blog",
+        item: "https://www.waterfordautoshine.com/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://waterfordautoshine.com/blog/${post.slug}`,
+        item: `https://www.waterfordautoshine.com/blog/${post.slug}`,
       },
     ],
   };
